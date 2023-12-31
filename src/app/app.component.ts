@@ -57,9 +57,9 @@ export class AppComponent implements OnInit {
         //     .catch((e) => {});
         // }
       }
-      // if (!useLang) {
-      //   useLang = 'en';
-      // }
+      if (!useLang) {
+        useLang = 'en';
+      }
       Storage.set({
         key: 'lang',
         value: useLang,
