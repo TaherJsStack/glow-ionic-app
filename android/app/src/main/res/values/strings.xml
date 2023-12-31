@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">glow-up</string>
+    <string name="title_activity_main">glow-up</string>
+    <string name="package_name">io.glow.up.app.starter</string>
+    <string name="custom_url_scheme">io.glow.up.app.starter</string>
+</resources>
