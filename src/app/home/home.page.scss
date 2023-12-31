@@ -1,0 +1,38 @@
+ion-tabs{
+    background-color: black;
+    --background: black;
+    ion-tab-bar {
+        background-color: black;
+        height: 68px;
+        ion-tab-button{
+            background-color: black;
+            &.tab-selected{
+                ion-thumbnail{
+                    max-width: 40px;
+                    height: min-content;
+                    background-color: #9E8B71;
+                    padding: 5px;
+                    border-radius: 100%;
+                    -webkit-border-radius: 100%;
+                    -moz-border-radius: 100%;
+                    -ms-border-radius: 100%;
+                    -o-border-radius: 100%;
+                }
+                span{
+                    display: none;
+                }
+            }
+            ion-thumbnail{
+                max-width: 25px;
+                height: min-content;
+                img{
+                    object-fit: contain;
+                }
+            }
+            span{
+                color: #fff;
+            }
+        }
+    }
+
+}

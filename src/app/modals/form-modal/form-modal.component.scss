@@ -1,0 +1,99 @@
+ion-content {
+    --background: transparent;
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      backdrop-filter: blur(3px);
+      .content {
+        margin: auto 0px 0px;
+        ion-card {
+          text-align: center;
+          margin: 0;
+          padding: 25px;
+          padding-bottom: 40px;
+          height: 100%;
+          .sub-title{
+            width: 75%;
+            margin: auto;
+          }
+          .footer{
+            margin-top: 2rem;
+          }      
+        }
+      }
+    }
+  }
+
+form{
+    margin-bottom: 2rem;
+    ion-list{
+        ion-item{
+            border: 1px solid #B4A690;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            margin-top: 10px;
+            position: relative;
+            ion-label{
+                color: #8F7A63;
+                position: absolute;
+                top: -16px;
+            }
+            &.item-has-value > ion-label,
+            &.item-has-focus > ion-label{
+                position: unset;
+
+            }
+            ion-input{
+                height: 56px;
+            }
+          
+        }
+    
+    }
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  ion-button{
+    width: 50%;
+    height: 56px;
+    --background: #F5F4F1;
+    color: #78716C;
+    &.active{
+      color: #ffffff;
+      --background: #8F7A63;
+      &.fulle-width{
+          width: 100%;
+      }
+    }
+  }
+}
+
+.radio-list{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  .radio-custom{
+      &:has(input[type='radio']:checked){
+          label{
+            background-image: url(../../../assets/icons/active-star.svg);
+        }
+      }
+      input[type='radio'] { 
+          display: none;
+      }
+      label{
+          background-image: url(../../../assets/icons/unactive-star.svg);
+          background-repeat: no-repeat;
+          width: 50px;
+          display: inline-block;
+          height: 50px;
+      }
+  }
+}

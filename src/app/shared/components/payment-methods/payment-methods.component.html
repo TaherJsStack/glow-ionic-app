@@ -1,0 +1,28 @@
+
+<section class="payment-methods">
+  <div class="section-title">
+    <h3> {{ 'Headers.Titles.PaymentMethods' | translate }}</h3>
+  </div>
+  <ion-list>
+    <ion-radio-group (ionChange)="handleChange($event)">
+      <ion-item lines="none" *ngFor="let item of list; trackBy: trackItems">
+        <ion-avatar>
+          <img [src]="item.icon" alt="" srcset="">
+        </ion-avatar>
+        <ion-label>
+          <label for="">{{ item.name }}</label>
+          <ion-note>
+            {{ item.info }}
+          </ion-note>
+        </ion-label>
+        <ion-radio mode="md" [value]="item">{{ item.name }}</ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <ion-buttons> 
+      <ion-button class="" (click)="showFromModal()">
+        <img src="assets/icons/plus.svg" alt="" srcset="">
+        {{ 'Buttons.AddNewCard' | translate }}
+      </ion-button>
+    </ion-buttons>
+  </ion-list>
+</section>

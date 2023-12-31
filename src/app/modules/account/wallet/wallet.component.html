@@ -1,0 +1,67 @@
+<ion-content>
+
+  <section>
+
+    <app-header headerTitle="{{ 'Headers.Titles.Wallet' | translate }}"></app-header>
+  
+    <ion-card>
+      <ion-card-header>
+        <div class="logo">
+          <img src="assets/icons/logo-white.svg" alt="" srcset="">
+        </div>
+        <p>{{ 'Headers.Titles.Wallet' | translate }}</p>
+      </ion-card-header>
+      <ion-card-content>
+        <label>NORA ABDULLAH</label>
+        <b>23,450.52 USD</b>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="full">
+          <img src="assets/icons/plus.svg" alt="" srcset="">
+          {{ 'Buttons.Deposit' | translate }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="full" routerLink="/account/Transform">
+          <img src="assets/icons/refresh-circle.svg" alt="" srcset="">
+          {{ 'Buttons.Transformation' | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  
+    <div>
+      <div class="section-title">
+        <h3> {{ 'Context.Transactions' | translate }}</h3>
+      </div>
+  
+      <ion-list>
+        <ion-item lines="none" *ngFor="let item of transList" [ngClass]="item.type === 'income' ? 'income': ''">
+          <ng-container *ngIf="item.image == ''; else userIamge">
+            <div class="icon">
+              <img src="{{ 'assets/icons/transform/'+(item.type === 'income' ? 'arrow-up-success.svg' : 'arrow-up.svg')}}" alt="" srcset="">
+            </div>
+          </ng-container>
+          <ng-template #userIamge>
+            <img [src]="item.image" alt="" srcset="">
+          </ng-template>
+
+          <ion-label>
+            <ion-text>{{ item.title }}</ion-text>
+            <ion-note color="medium" class="time">
+              <ion-icon name="time-outline"></ion-icon>
+              <span>{{ item.time }}</span>
+            </ion-note>
+          </ion-label>
+          <div class="value-icon">
+            <span>{{ item.value }}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </section>
+
+
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-content class="ion-padding">
+  
+  <app-header headerTitle="{{'Tabs.Reservations' | translate}}"></app-header>
+  
+     <!-- ion-segment -->
+     <ion-segment  [scrollable]="true" value="heart" [(ngModel)]="selectedSegment" mode="ios">
+      <ion-segment-button [value]="cardStateType.Coming">
+        <p>
+          {{ 'Segment.Coming' | translate }}
+        </p>
+      </ion-segment-button>
+      <ion-segment-button [value]="cardStateType.Ending">
+        <p>
+          {{ 'Segment.Completed' | translate }}
+        </p>
+      </ion-segment-button>
+      <ion-segment-button [value]="cardStateType.Canceled">
+        <p>
+          {{ 'Segment.Canceled' | translate }}
+        </p>
+      </ion-segment-button>
+    </ion-segment>
+  
+    <!-- selectedSegment -->
+    <div [ngSwitch]="selectedSegment">
+
+      <!-- --------------------------------------------- -->
+      <!-- ----------------Coming--------------------- -->
+      <!-- --------------------------------------------- -->
+      <div *ngSwitchCase="cardStateType.Coming" class="coming">
+        <ng-container *ngFor="let item of comingList">
+          <app-reservations-card 
+            [item]="item"
+            [cardStateType]="cardStateType.Coming"
+            [isSingleBtn]="false"
+            btnText="{{'Buttons.Cancel' | translate}}"
+            activeBtnText="{{ 'Buttons.ViewDetails' | translate}}"
+            (qrCodeButton)="onQrCodeButtonButtonFn($event)"
+            (cancelButton)="onCancelButtonFn($event)"
+            (actionButton)="actionButtonValue($event)"
+            ></app-reservations-card>
+        </ng-container>
+      </div>
+
+      <!-- --------------------------------------------- -->
+      <!-- ----------------Ending--------------------- -->
+      <!-- --------------------------------------------- -->
+      <div *ngSwitchCase="cardStateType.Ending">
+        <ng-container *ngFor="let item of comingList">
+          <app-reservations-card 
+            [item]="item"
+            [cardStateType]="cardStateType.Ending"
+            [isSingleBtn]="false"
+            btnText=" {{'Headers.Titles.WriteReview' | translate}}"
+            activeBtnText="{{ 'Buttons.BookAgain' | translate }}"
+            (cancelButton)="onCancelButtonFn($event)"
+            (actionButton)="actionButtonValue($event)"
+            ></app-reservations-card>
+        </ng-container>
+      </div>
+      
+      <!-- --------------------------------------------- -->
+      <!-- ----------------Canceled--------------------- -->
+      <!-- --------------------------------------------- -->
+      <div *ngSwitchCase="cardStateType.Canceled">
+        <ng-container *ngFor="let item of comingList">
+          <app-reservations-card 
+            [item]="item"
+            [cardStateType]="cardStateType.Canceled"
+            [isSingleBtn]="true"
+            [btnText]="''"
+            activeBtnText="{{ 'Buttons.ViewDetails' | translate }}"
+            (actionButton)="actionButtonValue($event)"
+            ></app-reservations-card>
+        </ng-container>
+      </div>
+
+    </div>
+
+</ion-content>

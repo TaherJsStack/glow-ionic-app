@@ -1,0 +1,22 @@
+<ion-content>
+
+  <app-header headerTitle="{{ 'Headers.Titles.Favorites' | translate }}"></app-header>
+
+  <ion-list>
+    <ng-container *ngFor="let item of list">
+      
+      <app-card 
+        [image]="item.image" 
+        [icon]="item.icon" 
+        [title]="item.title" 
+        [location]="item.location"
+        cardPathTo="/categories/salon/type"
+        packagePathTo='/categories/booking/111'
+        [isHeart]="true">
+      </app-card>
+
+    </ng-container>
+  </ion-list>
+
+
+</ion-content>

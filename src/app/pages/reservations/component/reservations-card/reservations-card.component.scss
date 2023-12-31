@@ -1,0 +1,149 @@
+
+ion-card{
+    margin: 10px 0;
+    padding: 0px 6px 12px;
+    ion-card-header{
+        padding: 0;
+        padding: 6px;
+        ion-row{
+            display: flex;
+            align-items: center;
+            h3{}
+            ion-note{}
+            .thumbnail-container{
+                display: flex;
+                justify-content: flex-end;
+                ion-thumbnail{
+                    width: 34px;
+                    height: 34px;
+                    img{
+                        width: fit-content;
+                    }
+                }
+                ion-buttons{
+                    ion-button{
+                        font-size: 12px;
+                        font-family: SuisseIntl-SemiBold;
+                        width: 62px;
+                        height: 34px;
+                        &.ending{
+                            --background: #ECFDF3;
+                            --color: #039855;
+                        }
+                        &.canceled{
+                            --background: #FEF3F2;
+                            color: #D92D20;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ion-card-content{
+        padding: 0;
+        .service-card{
+            background: transparent;
+            ion-item {
+                --background: #F5F4F1;
+                --inner-padding-end: 0px;
+                --padding-start: 0px;
+                --padding-end: 5px;
+                --background: #ffffff;
+                // border: 2px solid #F3F4F6;
+                margin-top: 0.4rem;
+                border-radius: 8px;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                -ms-border-radius: 8px;
+                -o-border-radius: 8px;
+                ion-avatar{
+                    width: 80px;
+                    height: 80px;
+                    padding: .5rem;
+                    border-radius: 0;
+                    -webkit-border-radius: 0;
+                    -moz-border-radius: 0;
+                    -ms-border-radius: 0;
+                    -o-border-radius: 0;
+                    img{
+                        border-radius: 8px;
+                    }
+                }
+                
+                ion-label{
+                    padding: 0 10px;
+                    ion-text{
+                        color: #1C1917;
+                        font-size: 14px;
+                        font-family: SuisseIntl-SemiBold;
+                        margin-bottom: 5px;
+                     }
+                    ion-note{
+                        font-size: 12px;
+                        color: #78716C;
+                        display: block;
+                        margin-bottom: 12px;
+                    }
+                    b{
+                        color: #8F7A63;
+                        font-size: 14px;
+                        font-family: SuisseIntl-Medium;
+                    }
+                }
+             
+            }
+        }
+        ion-buttons{
+
+            ion-button{
+              --background: #FAFAF9;
+              width: 62px;
+              height: 34px;
+              display: flex;
+              justify-content: space-between;
+              b{ }
+              img{
+                margin-right: 5px;
+              }
+            }
+          }
+    }
+    .card-footer{
+        ion-buttons{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            ion-button{
+                background-color: #FAFAF9;
+                color: #44403C;
+                font-size: 14px;
+                font-family: SuisseIntl-Regular;
+                font-family: SuisseIntl-Light;
+
+                height: 40px;
+                width: 50%;
+                // --border-radius: 8px;
+                border-radius: 8px;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                -ms-border-radius: 8px;
+                -o-border-radius: 8px;
+                &::part(native){
+                    padding: 0;
+                    margin: 0;
+                  }
+                &.active{
+                    color: #ffffff;
+                    --background: #8F7A63;
+                    &.fulle-width{
+                        width: 100%;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+

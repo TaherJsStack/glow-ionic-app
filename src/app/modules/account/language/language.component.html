@@ -1,0 +1,28 @@
+<ion-content>
+
+  <app-header headerTitle="{{ 'Headers.Titles.Language' | translate }}"></app-header>
+
+  <ion-list>
+    <ion-radio-group (ionChange)="handleChange($event)" [(ngModel)]="selectedLang">
+      <ion-item lines="none">
+        <ion-avatar>
+          <img src="assets/icons/flags/ksa.svg" alt="" srcset="">
+        </ion-avatar>
+        <ion-label>
+          <label for="">{{ 'Buttons.ArLang' | translate }}</label>
+        </ion-label>
+        <ion-radio mode="md" [value]="'ar'"></ion-radio>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-avatar>
+          <img src="assets/icons/flags/usa.svg" alt="" srcset="">
+        </ion-avatar>
+        <ion-label>
+          <label for="">{{ 'Buttons.EnLang' | translate }}</label>
+        </ion-label>
+        <ion-radio mode="md" [value]="'en'"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,80 @@
+ion-content{
+    section{
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        padding: 1.5rem;
+        .logo-container{
+            img{}
+        }
+        .title{
+            h3{
+                color: #1C1917;
+                font-family: SuisseIntl-SemiBold;
+                font-weight: 500;
+                font-size:20px;
+                line-height: 26px;
+                text-align: right
+            }
+        }
+        .sub-title{
+            p{
+                color: #78716C;
+                font-family: SuisseIntl-Regular;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+    
+        form{
+            ion-list{
+                ion-item { }
+                .checkbox{
+                    padding: 1.5rem 0;
+                    display: flex;
+                    ion-checkbox {
+                        --size: 20px;
+                        --color: #7F6957;
+                      }
+                      label{
+                        color: #000000;
+                        margin-right: 0.5rem;
+                        a{                    
+                            color: #7F6957;
+                            font-weight: bold;
+                        }
+                      }
+                      ion-checkbox::part(container) {
+                        border-radius: 6px;
+                        border: 2px solid #7F6957;
+                      }
+                }
+            }
+        }
+
+        .footer{
+            margin-top: auto;
+            text-align: center;
+            p{
+                font-size: 14px;
+                color: #181214;
+                font-family: SuisseIntl-Regular;
+                a{
+                    color: #7F6957;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+:host-context(body[dir="ltr"]) {
+    section{
+        .title{
+            h3{
+                text-align: left;
+            }
+        }
+     }
+}

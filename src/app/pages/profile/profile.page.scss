@@ -1,0 +1,95 @@
+@import '../../../assets/scss/global';
+
+ion-list{
+    background-color: transparent;
+    padding: 0 1.5rem;
+    .profile{
+        margin-top: 1rem;
+        ion-item{
+            background: #1C1917;
+            --background: #1C1917;
+            --padding-start: 10px;
+            height: 72px;
+            display: flex;
+            border-radius: 12px;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            -ms-border-radius: 12px;
+            -o-border-radius: 12px;
+            ion-avatar{
+                width: 48px;
+                height: 48px;
+                padding: 4px;
+                margin-left: 10px;
+                line-height: 75px;
+                background: #8F7A63;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+            }
+            ion-label{
+                ion-text{
+                    @extend %ion-text;
+                    color: #eeecec;
+                    font-family: SuisseIntl-Regular;
+                }
+                ion-note{
+                    color: #fff;
+                    font-size: 12px;
+                    font-family: SuisseIntl-Regular;
+    
+                }
+            }
+        }
+    }
+    ion-item{
+        margin-top: .7rem;
+        --height: 62px;
+        border-radius: 8px;
+        --inner-padding-end: 0px;
+        --padding-start: 15px;
+        --padding-end: 5px;
+        --background: #ffffff;
+        &::part(native){
+            min-height: 62px;
+        }
+        .icon{
+            width: 34px;
+            height: 34px;
+            border-radius: 100%;
+            background-color: #F5F4F1;
+            margin-left: 18px;
+            display: flex;
+            padding: 5px;
+            img{}
+        }
+        ion-label{
+            color: #1C1917;
+            font-size: 14px;
+            font-family: SuisseIntl-Medium;
+        }
+    }
+}
+
+:host-context(body[dir="ltr"]) {
+    ion-list{
+        background-color: transparent;
+        padding: 0 1.5rem;
+        .profile{
+            ion-item{
+                ion-avatar{
+                    margin-left: 0px;
+                    margin-right: 10px;
+                }
+            }
+        }
+        ion-item{
+            .icon{
+                margin-left: 0px;
+                margin-right: 18px;
+            }
+        }
+    }
+}

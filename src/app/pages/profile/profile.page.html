@@ -1,0 +1,96 @@
+<ion-content>
+
+  <app-header [isBackButton]="false" headerTitle="{{ 'Headers.Titles.Profile' | translate }}"></app-header>
+
+  <ion-list lines="none">
+
+    <div class="profile">
+      <ion-item lines="none" detail="false">
+        <ion-avatar>
+          <img src="assets/icons/user.svg" alt="" srcset="">
+        </ion-avatar>
+        <ion-label>
+          <ion-text> نورا عبدالله </ion-text>
+          <br />
+          <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+            @Nora.abdullah
+          </ion-note>
+        </ion-label>
+        <ion-buttons>
+          <ion-button routerLink="/account/EditProfile">
+            <img src="assets/icons/profile/edit.svg" alt="" srcset="">
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div>
+
+    <ion-item routerLink="/account/Favourites">
+      <div class="icon">
+        <img src="assets/icons/profile/heart.svg" alt="" srcset="">
+      </div>
+      <ion-label>
+        {{ 'Headers.Titles.Favorites' | translate }}
+      </ion-label>
+    </ion-item>
+
+    <ion-item routerLink="/account/Wallet">
+      <div class="icon">
+        <img src="assets/icons/profile/empty-wallet.svg" alt="" srcset="">
+      </div>
+      <ion-label>
+        {{ 'Headers.Titles.TheWallet' | translate }}
+      </ion-label>
+    </ion-item>
+
+    <ion-item routerLink="/account/PaymentGateway">
+      <div class="icon">
+        <img src="assets/icons/profile/payment-method.svg" alt="" srcset="">
+      </div>
+      <ion-label>
+        {{ 'Headers.Titles.PaymentMethod' | translate }}
+      </ion-label>
+    </ion-item>
+    <ion-item routerLink="/account/ChangePassword">
+      <div class="icon">
+        <img src="assets/icons/profile/lock.svg" alt="" srcset="">
+      </div>
+      <ion-label>
+        {{ 'Headers.Titles.ChangePassword' | translate }}
+      </ion-label>
+    </ion-item>
+    <ion-item routerLink="/account/Language">
+      <div class="icon">
+        <img src="assets/icons/profile/language-circle.svg" alt="" srcset="">
+      </div>
+      <ion-label>
+        {{ 'Headers.Titles.Language' | translate }}
+      </ion-label>
+    </ion-item>
+    <ion-item routerLink="/account/Currency">
+      <div class="icon">
+        <img src="assets/icons/profile/currency.svg" alt="" srcset="">
+      </div>
+      <ion-label>
+        {{ 'Headers.Titles.Currency' | translate }}
+      </ion-label>
+    </ion-item>
+    <ion-item routerLink="/account/Privacy">
+      <div class="icon">
+        <img src="assets/icons/profile/shield-tick.svg" alt="" srcset="">
+      </div>
+      <ion-label>
+        {{ 'Headers.Titles.PrivacyPolicy' | translate }}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <div class="icon">
+        <img src="assets/icons/profile/logout.svg" alt="" srcset="">
+      </div>
+      <ion-label>
+        {{ 'Headers.Titles.Logout' | translate }}
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

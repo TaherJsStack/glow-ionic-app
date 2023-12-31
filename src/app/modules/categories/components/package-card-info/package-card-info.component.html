@@ -1,0 +1,42 @@
+<ion-list class="packages">
+  <ion-item lines="none" detail="false" *ngFor="let item of cardInfoList">
+    <ion-avatar>
+      <img [src]="item.image" alt="" srcset="">
+    </ion-avatar>
+    <ion-label>
+      <ion-text>{{ item.title }} </ion-text>
+      <br />
+      <ion-row *ngIf="item.location" class="location">
+        <img src="assets/icons/vector.svg" alt="" srcset="">
+        <p>{{ item.location }}</p>
+      </ion-row>
+      <ion-note *ngIf="item.description" color="medium" class="ion-text-wrap ion-margin-bottom">
+        {{ item.description }}
+      </ion-note>
+
+      <b *ngIf="item.price">{{ item.price }} ر.س</b>
+      <ion-button shape="round" fill="clear" *ngIf="item.rate">
+        <b>{{ item.rate }}</b>
+        <img alt="" src="assets/icons/star.svg" />
+      </ion-button>
+
+    </ion-label>
+    <ion-buttons>
+      <ng-container *ngIf="inputButtonType === buttonType.Add">
+        <ion-button (click)="DeleteButton.emit({value: true, type: buttonType.Delete})">
+          <img src="assets/icons/plus.svg" alt="" srcset="">
+        </ion-button>
+      </ng-container>
+      <ng-container *ngIf="inputButtonType === buttonType.Delete">
+        <ion-button (click)="DeleteButton.emit({value: true, type: buttonType.Delete})">
+          <img src="assets/icons/trash.svg" alt="" srcset="">
+        </ion-button>
+      </ng-container>
+      <ng-container *ngIf="inputButtonType === buttonType.QrCode">
+        <ion-button (click)="QrCodeButton.emit({value: true, type: buttonType.QrCode})">
+          <img src="assets/icons/QR-Code.svg" alt="" srcset="">
+        </ion-button>
+      </ng-container>
+    </ion-buttons>
+  </ion-item>
+</ion-list>

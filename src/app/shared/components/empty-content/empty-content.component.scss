@@ -1,0 +1,23 @@
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    .icon{ }
+    .content{
+     h3{
+        font-size: 16;
+        color: #44403C;
+        font-family: SuisseIntl-Medium;
+     }
+     p{
+        padding: 0 3rem;
+        font-size: 14px;
+        color: #A8A29E;
+        font-family: SuisseIntl-Regular;
+        line-height: 18px;
+     }   
+    }
+}

@@ -1,0 +1,30 @@
+.infoList{
+    margin-top: 2rem;
+    ion-list{
+        background-color: #eeecec;
+        border-radius: 8px;
+        -border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        ion-item{
+            margin-top:0;
+            border-radius: 0;
+            ion-label{
+                display: flex;
+                justify-content: space-between;
+                ion-text{
+                    color: #78716C;
+                    font-size: 12px;
+                    font-family: SuisseIntl-Regular;
+                }
+                b{
+                    color: #1C1917;
+                    font-size: 12px;
+                    font-family: SuisseIntl-SemiBold;
+                }
+            }
+        }
+    }
+}

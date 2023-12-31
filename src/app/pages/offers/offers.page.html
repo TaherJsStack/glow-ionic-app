@@ -1,0 +1,58 @@
+
+<ion-content>
+
+  <app-header [isBackButton]="false" headerTitle="{{ 'Tabs.Offers' | translate }}"></app-header>
+
+  <ng-container>
+    <section>
+      <h3 class="section-title">{{ 'Context.TodayOffer' | translate }}</h3>
+      <ng-container *ngFor="let item of list">
+        <br>  
+        <app-card 
+            [image]="item.image" 
+            [icon]="item.icon" 
+            [title]="item.title" 
+            [location]="item.location"
+            [offer]="item.offer"
+            [price]="item.price"
+            cardPathTo="/categories/package/offers/55"
+            packagePathTo="/categories/booking/88"
+            [queryParams]="{openPaymen: true, openBooking: true}"
+            [isHeart]="false"></app-card>
+      </ng-container>
+    </section>
+  </ng-container>
+
+  <!-- Best offers -->
+  <!-- ------------------------ -->
+  <app-slider-container
+    id="homeStep1"
+    type="best-offers"
+    title="{{ 'Context.BestOffers' | translate }}"
+    cardPathTo="/categories/package/offers/88"
+    packagePathTo="/categories/booking/88"
+    [queryParams]="{openPaymen: true, openBooking: true}"
+    [dataList]="bestOffersList"
+    [isItemDetail]="true"
+    [slidesPerView]="1.4"
+    [slidesSpaceBetween]="7"
+  ></app-slider-container>
+  <!-- ------------------------ -->
+
+    <!-- Offers Less Than 300  -->
+  <!-- ------------------------ -->
+  <app-slider-container
+    id="homeStep1"
+    type="offers-less-than-300"
+    title="{{ 'Context.OffersLessThan-300' | translate }} ر.س"
+    cardPathTo="/categories/package/offers/88"
+    packagePathTo="/categories/booking/88"
+    [queryParams]="{openPaymen: true, openBooking: true}"
+    [dataList]="OffersLessThan300List"
+    [isItemDetail]="true"
+    [slidesPerView]="1.4"
+    [slidesSpaceBetween]="7"
+  ></app-slider-container>
+  <!-- ------------------------ -->
+
+</ion-content>

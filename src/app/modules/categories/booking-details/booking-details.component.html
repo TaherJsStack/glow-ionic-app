@@ -1,0 +1,32 @@
+<ion-content class="ion-padding">
+  
+  <app-header headerTitle="{{ 'Headers.Titles.BookingDetails' | translate }}"></app-header>
+ 
+  <app-package-card-info 
+    [inputButtonType]="buttonType.QrCode" 
+    [cardInfoList]="offersList"
+    (QrCodeButton)="onQrCodeButtonButtonFn($event)"
+    ></app-package-card-info>
+
+  <div class="section-title">
+    <h3> {{ 'Context.MyServices' | translate }}</h3>
+  </div>
+
+  <app-package-card-info 
+    [inputButtonType]="buttonType.Delete" 
+    [cardInfoList]="serviceList"
+    (DeleteButton)="onCancelButtonFn($event)"
+    ></app-package-card-info>
+
+  <section class="cancel-order">
+    <ion-buttons> 
+      <ion-button class="">
+        <img src="assets/icons/close-circle.svg" alt="" srcset="">
+        {{ 'Buttons.Cancellation' | translate }}
+      </ion-button>
+    </ion-buttons>
+  </section>
+
+  <app-list-info [listInfo]="listInfo" ></app-list-info>
+
+</ion-content>

@@ -1,0 +1,54 @@
+
+<ion-content>
+  <!-- logo-container -->
+  <div class="logo-container">
+    <img src="assets/logo.png" alt="" srcset="">
+  </div>
+  <!-- end logo-container -->
+  
+  <!-- ion-slides -->
+  <ion-slides 
+    #slides 
+    (ionSlideWillChange)="onSlideChangeStart($event)" 
+    (ionSlideTouchEnd)="ionSlideTouchEnd($event)" 
+    pager="true" 
+    class="swiper-slide intro-swiper-slide" >
+
+      <ion-slide>
+        <div class="slid-container">
+          <img src="assets/intro/slid1.svg" alt="" srcset="">
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="slid-container">
+          <img src="assets/intro/slid2.svg" alt="" srcset="">
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="slid-container">
+          <img src="assets/intro/slid3.svg" alt="" srcset="">
+        </div>
+      </ion-slide>
+
+  </ion-slides>
+  <!-- end ion-slides -->
+  
+  <div class="text-container">
+    <h3>هذا النص هو مثال لنص  </h3>
+    <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، يستبدل في نفس المساحة </p>
+  </div>
+
+  <!-- buttons-container -->
+  <div class="buttons-container">
+    <ion-button fill="clear" routerLink="/user/login" class="skip">{{ 'Buttons.Skip' | translate }} </ion-button>
+    <div class="arrow-left-container">
+      <ion-button shape="round" class="arrow-left" (click)="next()">
+        <img src="assets/icons/arrow-leftarrow-left.svg" alt="" srcset="">
+      </ion-button>
+    </div>
+  </div>
+  <!-- end buttons-container -->
+
+</ion-content>

@@ -1,0 +1,149 @@
+header{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .image{
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        img{}
+    }
+    h4{
+        margin-bottom: 0;
+    }
+    p{
+        margin: 0;
+    }
+    label{
+        width: 52px;
+        height: 24px;
+        background: #F5F4F1;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+}
+}
+ion-segment{
+    background: transparent;
+    height: 55px;
+    margin-top: 1rem;
+    ion-segment-button{
+        min-width: 105px;
+        height: 34px;
+        margin: 0 4px;
+        background-color: #F5F5F4;
+        display: flex;            
+        p{
+            font-size: 12px;
+            color: #44403C;
+            font-family: SuisseIntl-Medium;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img{
+                display: none;
+            }
+        }
+        
+    }
+    .segment-button-checked{
+        background-color: #8F7A63;
+        &::part(native){
+            background-color: #8F7A63;
+            border-radius: 8px;
+            overflow: hidden;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -ms-border-radius: 8px;
+            -o-border-radius: 8px;
+        }
+        p{
+            color: #F5F4F1;
+            img{
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.gallery{
+    ion-grid{
+        ion-row{
+            ion-col{
+                padding: 4px;
+                margin: 0;
+                ion-card{
+                    padding: 0;
+                    margin: 0;
+                    border-radius: 20px;
+                    img{
+                        width: -webkit-fill-available;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.reviews{
+    ion-card{
+        padding: 10px;
+        ion-card-header{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            .image{
+                margin-left: 10px;
+            }
+            ion-label{}
+            small{
+                flex-basis: auto;
+                flex: 1;
+                text-align: end;
+                align-self: end;
+                margin-bottom: 10px;
+            }
+        }
+        hr{
+            border: 0.1px solid #F5F5F4;
+            width: 90%;
+        }
+        ion-card-content{
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.footer{
+    margin: 2rem 0;
+    ion-button{
+        --background: #8F7A63;
+        margin: 0 20px;
+        width: -webkit-fill-available;
+    }
+}
+
+:host-context(body[dir="ltr"]) {
+    .reviews{
+        ion-card{
+            ion-card-header{
+                .image{
+                    margin-left: unset;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

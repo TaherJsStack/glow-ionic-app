@@ -1,0 +1,132 @@
+<ion-content class="ion-padding">
+  <main>
+    <app-header headerTitle="{{ 'Headers.Titles.Filtering' | translate }}"></app-header>
+  
+    <app-section sectionTitle="{{ 'Context.City' | translate }}">
+      <ng-container appContentSlot1>
+        <ion-list>
+          <ion-item lines="none" detail="false">
+            <ion-label>{{ 'Context.SelectCity' | translate }}</ion-label>
+            <ion-button slot="end" fill="clear"> 
+              <img src="assets/icons/arrow-small-left_outline.svg" alt="" srcset="">  
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ng-container>
+    </app-section>
+  
+    <app-section sectionTitle="{{ 'Context.ThePrice' | translate }}">
+      <ng-container appContentSlot1>
+        <ion-range 
+          (ionChange)="onIonChange($event)" 
+          aria-label="Dual Knobs Range" 
+          [dualKnobs]="true" 
+          [value]="{ lower: 20, upper: 80 }"
+          [pin]="true"
+          [ticks]="false"
+          [snaps]="true"
+          ></ion-range>  
+      </ng-container>
+    </app-section>
+  
+    <app-section sectionTitle="{{ 'Context.Section' | translate }}">
+      <ng-container appContentSlot1>
+        <section class="checkbox-list">
+          <div class="checkbox-custom">
+            <input type="checkbox" id="1">
+            <label for="1">مثال الصنف</label>
+          </div>
+          <div class="checkbox-custom">
+            <input type="checkbox" id="2">
+            <label for="2">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="3">
+            <label for="3">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="4">
+            <label for="4">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="5">
+            <label for="5">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="6">
+            <label for="6">مثال الصنف</label>
+          </div>        
+        </section>
+      </ng-container>
+    </app-section>
+  
+    <app-section sectionTitle="{{ 'Context.Section' | translate }}">
+      <ng-container appContentSlot1>
+        
+        <section class="checkbox-list">
+          <div class="checkbox-custom">
+            <input type="checkbox" id="1">
+            <label for="1">مثال الصنف</label>
+          </div>
+          <div class="checkbox-custom">
+            <input type="checkbox" id="2">
+            <label for="2">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="3">
+            <label for="3">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="4">
+            <label for="4">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="5">
+            <label for="5">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="6">
+            <label for="6">مثال الصنف</label>
+          </div>        
+        </section>
+      </ng-container>
+    </app-section>
+  
+    <app-section sectionTitle="{{ 'Context.Section' | translate }}">
+      <ng-container appContentSlot1>
+        
+        <section class="checkbox-list">
+          <div class="checkbox-custom">
+            <input type="checkbox" id="1">
+            <label for="1">مثال الصنف</label>
+          </div>
+          <div class="checkbox-custom">
+            <input type="checkbox" id="2">
+            <label for="2">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="3">
+            <label for="3">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="4">
+            <label for="4">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="5">
+            <label for="5">مثال الصنف</label>
+          </div>        
+          <div class="checkbox-custom">
+            <input type="checkbox" id="6">
+            <label for="6">مثال الصنف</label>
+          </div>        
+        </section>
+      </ng-container>
+    </app-section>
+    
+    <div class="footer">
+      <ion-button type="submit" class="main-button">{{ 'Buttons.Confirm' | translate }}</ion-button>
+    </div>
+  </main>
+
+</ion-content>

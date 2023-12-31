@@ -1,0 +1,358 @@
+<ion-content class="ion-padding">
+  
+  <app-header 
+  headerTitle="" 
+  forwardIcon="assets/icons/arrow-white.svg"
+  shareIcon="assets/icons/share.svg"
+  ></app-header>
+  
+  <section class="absolute-content">
+    
+    <!-- header -->
+    <header>
+      <img src="assets/images/salon.svg" alt="" srcset="">
+    </header>
+    
+    <!-- ion-grid -->
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="8">
+          <div class="section-title">
+            <h3>صالون سوليتير </h3>
+          </div>
+          <div class="location">
+            <div class="icon">
+              <img src="assets/icons/location2.svg" alt="" srcset="">
+            </div>
+            <small class="address">
+              حي العارض  | الرياض
+            </small>
+          </div>
+          <div class="rate">
+            <div class="icon">
+              <img src="assets/icons/heart2.svg" alt="" srcset="">
+            </div>
+            <small>4.8 ( <dt>2,568</dt>  تقييم)</small>
+          </div>
+        </ion-col>
+        <ion-col size="4" class="ion-align-self-senter">
+          <ion-buttons class=" ion-justify-content-end">
+            <ion-button >
+              <app-favorite-btn ></app-favorite-btn>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- ion-segment -->
+    <ion-segment  [scrollable]="true" value="heart" [(ngModel)]="selectedSegment" mode="ios">
+      <ion-segment-button value="Aboutus">
+        <p>
+          <img src="assets/icons/check.svg" alt="" srcset="">
+          {{ 'Context.AboutUs' | translate }}
+        </p>
+      </ion-segment-button>
+      <ion-segment-button value="Services">
+        <p>
+          <img src="assets/icons/check.svg" alt="" srcset="">
+          {{ 'Context.Services' | translate }}
+        </p>
+      </ion-segment-button>
+      <ion-segment-button value="Packages">
+        <p>
+          <img src="assets/icons/check.svg" alt="" srcset="">
+          {{ 'Context.Offers' | translate }}
+        </p>
+      </ion-segment-button>
+      <ion-segment-button value="Gallery">
+        <p>
+          <img src="assets/icons/check.svg" alt="" srcset="">
+          {{ 'Context.Gallery' | translate }}
+        </p>
+      </ion-segment-button>
+      <ion-segment-button value="Reviews">
+        <p>
+          <img src="assets/icons/check.svg" alt="" srcset="">
+          {{ 'Context.Reviews' | translate }}
+        </p>
+      </ion-segment-button>
+    
+    </ion-segment>
+  
+    <!-- selectedSegment -->
+    <div class="selectedSegment" [ngSwitch]="selectedSegment">
+      
+      <!-- --------------------------------------------- -->
+      <!-- ----------------Aboutus--------------------- -->
+      <!-- --------------------------------------------- -->
+      <div class="about-us" *ngSwitchCase="'Aboutus'">
+
+        <div class="section-title">
+          <h3>{{ 'Context.AboutUs' | translate }} </h3>
+        </div>
+        <ion-text>
+          هناك العديد من الأشكال المتاحة لنصوص لوريم إيبسوم ، لكن الغالبية تعرضت للتغيير بشكل ما ، عن طريق إدخال بعض الفكاهة أو الكلمات العشوائية التي لا تبدو قابلة للتصديق إلى حد ما.
+        </ion-text>
+
+        <!-- specialist -->
+        <!-- ------------------------ -->
+        <app-slider-container
+          id="specialist"
+          type="specialist"
+          [dataList]="specialist"
+          [isItemDetail]="true"
+          [slidesPerView]="3.5"
+          [slidesSpaceBetween]="7"
+        ></app-slider-container>
+        <!-- ------------------------ -->
+
+        <section class="work-time">
+          <div class="section-title">
+            <h3>{{ 'Context.TimesOfWork' | translate }} </h3>
+          </div>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="5">الاثنين - الجمعة:</ion-col>
+              <ion-col size="7">08:00 ص - 08:00 م</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="5">السبت - الأحد:</ion-col>
+              <ion-col size="7">10:00 ص - 10:00 م</ion-col>
+            </ion-row>
+          </ion-grid>
+        </section>
+
+        <section class="contact-us">
+          <div class="section-title">
+            <h3> {{ 'Context.ConnectWithUs' | translate }}</h3>
+          </div>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="10"> (955) 516-040-515</ion-col>
+              <ion-col size="2">
+                <ion-buttons>
+                  <ion-button>
+                    <img src="assets/icons/message.svg" alt="" srcset="">
+                  </ion-button>
+                </ion-buttons>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </section>
+
+        <section class="contact-us">
+          <div class="section-title">
+            <h3>{{ 'Context.Address' | translate }} </h3>
+          </div>
+          <ion-grid>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="6">
+                <div class="location">
+                  <div class="icon">
+                    <img src="assets/icons/location2.svg" alt="" srcset="">
+                  </div>
+                  <small class="address">
+                    حي العارض  | الرياض
+                  </small>
+                </div>
+              </ion-col>
+              <ion-col size="6" class="ion-align-self-senter">
+                <ion-buttons class="ion-justify-content-end">
+                  {{ 'Context.ShowOnMap' | translate }}
+                </ion-buttons>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </section>
+
+      </div>
+  
+      <!-- --------------------------------------------- -->
+      <!-- ----------------Services--------------------- -->
+      <!-- --------------------------------------------- -->
+      <section *ngSwitchCase="'Services'">
+        
+        <ion-list class="services">
+          <ion-list-header class="ion-justify-content-between">
+            <ion-label>
+              <div class="section-title">
+                <h3>  {{ 'Context.OurServices' | translate }}</h3>
+              </div>
+              </ion-label>
+            <ion-button fill="clear" routerLink=""> {{ 'Buttons.ShowMore' | translate }} </ion-button>
+          </ion-list-header>
+      
+          <ion-item [ngClass]="item.selected ? 'selectedService' : '' " lines="none" [detail]="true" *ngFor="let item of serviceList" routerLink="/categories/package/services/55">
+            <div class="icon">
+              <img [src]="item.icon" alt="" srcset="">
+            </div>
+            <ion-label>
+              <ion-text>{{ item.title }} </ion-text><br />
+              <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+                {{ item.availableService }}
+              </ion-note>
+            </ion-label>
+            <span>2</span>
+          </ion-item>
+         
+        </ion-list>
+
+        <div class="footer">
+          <ion-button 
+            type="button" 
+            class="main-button" 
+            routerLink="/categories/booking/55" 
+            [ngClass]="activeBookBTN ? 'active' : '' ">{{ 'Buttons.BookNow' | translate }}</ion-button>
+        </div>
+
+      </section>
+  
+      <!-- --------------------------------------------- -->
+      <!-- ----------------Packages--------------------- -->
+      <!-- --------------------------------------------- -->
+      <div *ngSwitchCase="'Packages'">
+        <ion-list class="packages">
+          <ion-list-header class="ion-justify-content-between">
+            <ion-label>
+              <div class="section-title">
+                <h3>{{ 'Context.Offers' | translate }} </h3>
+              </div>
+              </ion-label>
+            <ion-button fill="clear" routerLink=""> {{ 'Buttons.ShowMore' | translate }} </ion-button>
+          </ion-list-header>
+      
+          <ion-item [ngClass]="item.selected ? 'selectedPackage' : '' " lines="none" detail="false" *ngFor="let item of offersList" routerLink="/categories/package/offers/55">
+            <ion-avatar>
+              <img [src]="item.image" alt="" srcset="">
+            </ion-avatar>
+            <ion-label>
+              <ion-text>{{ item.title }} </ion-text>
+              <br />
+              <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+                {{ item.description }}
+              </ion-note>
+              <b>{{ item.price }} ر.س</b>
+            </ion-label>
+            <ion-buttons>
+              <ion-button>
+                <img *ngIf="item.selected" src="assets/icons/check2.svg" alt="" srcset="">
+                <img *ngIf="!item.selected" src="assets/icons/plus.svg" alt="" srcset="">
+              </ion-button>
+            </ion-buttons>
+          </ion-item>
+         
+        </ion-list>
+
+        <div class="footer">
+          <ion-button 
+            type="button" 
+            class="main-button" 
+            routerLink="/categories/booking/55"
+            [ngClass]="activeBookBTN ? 'active' : '' ">{{ 'Buttons.BookNow' | translate }}</ion-button>
+        </div>
+        
+      </div>
+
+
+      <!-- --------------------------------------------- -->
+      <!-- ----------------Gallery--------------------- -->
+      <!-- --------------------------------------------- -->
+      <div *ngSwitchCase="'Gallery'">
+        <ion-list class="gallery">
+          <ion-list-header class="ion-justify-content-between">
+            <ion-label>
+              <div class="section-title">
+                <h3>{{ 'Context.TheOffer' | translate }} </h3>
+              </div>
+              </ion-label>
+            <ion-button fill="clear" routerLink=""> {{ 'Buttons.ShowMore' | translate }} </ion-button>
+          </ion-list-header>
+      
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4" *ngFor="let path of galleryList">
+                <ion-card>
+                  <img [src]="path.image" alt="" srcset="">
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+         
+        </ion-list>
+
+        <div class="footer">
+          <ion-button 
+            type="button" 
+            class="main-button" 
+            [ngClass]="activeBookBTN ? 'active' : '' ">{{ 'Buttons.BookNow' | translate }}</ion-button>
+        </div>
+        
+      </div>
+
+      <!-- --------------------------------------------- -->
+      <!-- ----------------Reviews--------------------- -->
+      <!-- --------------------------------------------- -->
+      <div *ngSwitchCase="'Reviews'">
+        <ion-list class="reviews">
+          
+          <ion-card >
+            <ion-card-header>
+              <div class="image">
+                <img alt="" src="assets/icons/reviews/reviews.svg" />
+              </div>
+              <ion-label>
+                <div class="section-title">
+                  <h3>Marry Willions </h3>
+                </div>
+                <app-show-rating [rating]="2"></app-show-rating>
+              </ion-label>
+              <small class="date">04 أبريل 2023</small>
+            </ion-card-header>
+            <hr>
+            <ion-card-content>
+              <ion-note color="medium" class="">
+                “هناك حقيقة مثبتة منذ زمن طويل وهي 
+                أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي”                 
+              </ion-note>
+            </ion-card-content>
+          </ion-card>
+          <ion-card >
+            <ion-card-header>
+              <div class="image">
+                <img alt="" src="assets/icons/reviews/reviews.svg" />
+              </div>
+              <ion-label>
+                <div class="section-title">
+                  <h3>Marry Willions </h3>
+                </div>
+                <app-show-rating [rating]="5"></app-show-rating>
+              </ion-label>
+              <small class="date">04 أبريل 2023</small>
+            </ion-card-header>
+            <hr>
+            <ion-card-content>
+              <ion-note color="medium" class="">
+                “هناك حقيقة مثبتة منذ زمن طويل وهي 
+                أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي”                 
+              </ion-note>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+
+        <div class="footer">
+          <ion-button 
+            type="button" 
+            class="active main-button" 
+            [ngClass]="activeBookBTN ? 'active' : '' "> {{ 'Buttons.BookNow' | translate }}</ion-button>
+        </div>
+        
+      </div>
+
+
+    </div>
+  
+  </section>
+
+
+</ion-content>

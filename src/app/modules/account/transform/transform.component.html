@@ -1,0 +1,45 @@
+<ion-content>
+
+  <section>
+
+    <app-header headerTitle="{{ 'Headers.Titles.Transformation' | translate }}"></app-header>
+
+    <ion-select aria-label="transform" interface="popover" placeholder="USD1 " mode="ios">
+      <ion-select-option value="USD1">
+        <ion-img src="assets/icons/bag.svg"></ion-img>
+        USD1
+      </ion-select-option>
+      <ion-select-option value="USD">USD</ion-select-option>
+    </ion-select>
+
+    <div class="input-value">
+      <b>{{ inputValue | currencyTransform }}</b>
+    </div>
+
+    <div class="footer-section">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" *ngFor="let number of numList">
+            <ion-button (click)="onClickNumberButton(number)">{{ number }}</ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button (click)="removeLastNumber()">
+              <img src="assets/icons/Path.svg" alt="" srcset="">
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button (click)="onClickNumberButton('0')">0</ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button>.</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="footer">
+      <ion-button type="submit" class="main-button" (click)="onSubmit()">{{ 'Buttons.Send' | translate }}</ion-button>
+    </div>
+  </section>
+
+</ion-content>

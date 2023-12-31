@@ -1,0 +1,99 @@
+ion-content{
+display: flex;
+flex-direction: column;
+    .logo-container{
+        padding: 1rem;
+        img{
+            margin: auto;
+            display: block;
+        }
+    }
+    ion-slides{
+        padding: 0;
+        height: 61vh;
+        height: 70%;
+        overflow: visible;
+        .slid-container{
+            img{
+                // width: 77%;
+                margin: auto;
+                display: block;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+            }
+        }
+    }
+    .text-container{
+        text-align: center;
+        padding: 0 15px;
+        h3{
+            font-family: SuisseIntl-SemiBold;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 26px;
+            color: #1C1917;
+        }
+        p{
+            font-family: SuisseIntl-Regular;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #78716C;
+        }
+    }
+    .buttons-container{
+        margin-top: auto;
+        padding:0 15px;
+        display: flex;
+        justify-content: space-between;
+        .arrow-left-container{
+            width: 53px;
+            height: 53px;
+            outline: 1px solid #78716C;
+            border-radius: 100%;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -ms-border-radius: 100%;
+            -o-border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .arrow-left{
+                width: 48px;
+                height: 48px;
+                --background: #1C1917;
+                --padding-end: 0;
+                --padding-start: 0;
+                --padding-top: 0;
+                --padding-bottom: 0;
+            }
+        }
+        .skip{
+            font-family: SuisseIntl-Regular;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #78716C;
+        }
+    }
+}
+:host-context(body[dir="ltr"]) {
+    ion-content{
+        .buttons-container{
+            .arrow-left-container{
+                ion-button{
+                    img{
+                        transform: rotate(180deg);
+                        -webkit-transform: rotate(180deg);
+                        -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                        -o-transform: rotate(180deg);
+                    }                    
+                }
+            }
+        }
+    }
+}

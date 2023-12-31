@@ -1,0 +1,120 @@
+<ion-content class="ion-padding">
+  
+  <app-header headerTitle="{{ 'Headers.Titles.AppointmentBooking' | translate }} "></app-header>
+  
+  <section>
+    <div class="section-title">
+      <h3>{{ 'Context.ChooseDay' | translate }}</h3>
+    </div>
+    <ion-datetime 
+      mode="md"
+      class="datetime" 
+      [multiple]="true" 
+      presentation="date" 
+      [value]="['2022-06-03', '2022-06-13', '2022-06-29']">
+    </ion-datetime>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h3>{{ 'Context.ChooseTime' | translate }}</h3>
+    </div>
+    
+    <ion-card>
+      <section class="checkbox-list">
+        <div class="checkbox-custom">
+          <input type="checkbox" id="1">
+          <label for="1">11:00 ص </label>
+        </div>
+        <div class="checkbox-custom">
+          <input type="checkbox" id="2">
+          <label for="2">12:00 م</label>
+        </div>        
+        <div class="checkbox-custom">
+          <input type="checkbox" id="3">
+          <label for="3">01:00 م</label>
+        </div>        
+        <div class="checkbox-custom">
+          <input type="checkbox" id="4">
+          <label for="4">02:00 م</label>
+        </div>        
+        <div class="checkbox-custom">
+          <input type="checkbox" id="5">
+          <label for="5">03:00 م</label>
+        </div>        
+        <div class="checkbox-custom">
+          <input type="checkbox" id="6">
+          <label for="6">04:00 م</label>
+        </div>        
+        <div class="checkbox-custom">
+          <input type="checkbox" id="7">
+          <label for="7">05:00 م</label>
+        </div>        
+      </section>
+    </ion-card>
+  </section>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h1>{{ 'Context.Notifications' | translate }}</h1>
+        <ion-note>
+          {{ 'Context.ReceiveNotifications' | translate }}
+        </ion-note>
+      </ion-label>
+      <ion-buttons>
+        <ion-button>
+          <ion-toggle></ion-toggle>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h1>{{ 'Context.NumberOfIndividuals' | translate }}</h1>
+        <ion-note>
+          {{ 'Context.ChooseTheNumberOfPeople' | translate }}
+        </ion-note>
+      </ion-label>
+      <ion-buttons>
+        <ion-button (click)="increment()">
+          <img src="assets/icons/add.svg" alt="" srcset="">
+        </ion-button>
+        <b>{{countValue}}</b>
+        <ion-button (click)="decrement()">
+          <img src="assets/icons/minus.svg" alt="" srcset="">
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="packages">
+    <ion-list-header class="ion-justify-content-between">
+      <ion-label>
+        <div class="section-title">
+          <h3>{{ 'Context.ChooseTheSpecialist' | translate }} </h3>
+        </div>
+        </ion-label>
+      <ion-button fill="clear" routerLink=""> {{ 'Buttons.ShowMore' | translate }} </ion-button>
+    </ion-list-header>
+
+
+    <!-- specialist -->
+    <!-- ------------------------ -->
+    <app-slider-container
+      id="specialist"
+      type="specialist"
+      [dataList]="specialist"
+      [isItemDetail]="true"
+      [slidesPerView]="3.5"
+      [slidesSpaceBetween]="7"
+    ></app-slider-container>
+    <!-- ------------------------ -->
+
+  </ion-list>
+
+  <div class="footer">
+    <ion-button type="button" class="login main-button" routerLink="/categories/payment">{{ 'Buttons.Continue' | translate }}</ion-button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,140 @@
+<ion-content class="ion-padding">
+  <app-header headerTitle="{{ 'Headers.Titles.Notifications' | translate }}"></app-header>
+
+  <ng-container *ngIf="notificationList; else notification_content">
+    <ion-list>
+
+      <ion-list-header class="ion-justify-content-between">
+        <ion-label>
+          <small>
+            {{ 'Context.Today' | translate }}
+          </small>
+          </ion-label>
+        <ion-button fill="clear">{{ 'Buttons.ReadAll' | translate }} </ion-button>
+      </ion-list-header>
+  
+      <ion-item lines="none">
+        <div class="icon">
+          <img src="assets/icons/heart.svg" alt="" srcset="">
+        </div>
+        <ion-label>
+          <ion-text>{{ 'Context.YourOrderConfirmed' | translate }} </ion-text><br />
+          <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+            تهانينا! تم حجز موعدك في صالون سوليتير يوم الأربعاء، 20 سبتمبر 2024 - 10:00 م
+          </ion-note>
+          <ion-note color="medium" class="time">
+            <ion-icon name="time-outline"></ion-icon>
+            <b>منذ 6 دقائق</b>
+          </ion-note>
+        </ion-label>
+        <ion-icon class="ion-icon" name="" slot="end"></ion-icon>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <div class="icon">
+          <img src="assets/icons/heart.svg" alt="" srcset="">
+        </div>
+        <ion-label>
+          <ion-text>{{ 'Context.YourOrderConfirmed' | translate }} </ion-text><br />
+          <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+            تهانينا! تم حجز موعدك في صالون سوليتير يوم الأربعاء، 20 سبتمبر 2024 - 10:00 م
+          </ion-note>
+          <ion-note color="medium" class="time">
+            <ion-icon name="time-outline"></ion-icon>
+            <b>منذ 6 دقائق</b>
+          </ion-note>
+        </ion-label>
+        <ion-icon class="ion-icon" name="" slot="end"></ion-icon>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <div class="icon">
+          <img src="assets/icons/heart.svg" alt="" srcset="">
+        </div>
+        <ion-label>
+          <ion-text>{{ 'Context.YourOrderConfirmed' | translate }} </ion-text><br />
+          <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+            تهانينا! تم حجز موعدك في صالون سوليتير يوم الأربعاء، 20 سبتمبر 2024 - 10:00 م
+          </ion-note>
+          <ion-note color="medium" class="time">
+            <ion-icon name="time-outline"></ion-icon>
+            <b>منذ 6 دقائق</b>
+          </ion-note>
+        </ion-label>
+        <ion-icon class="ion-icon" name="" slot="end"></ion-icon>
+      </ion-item>
+  
+    </ion-list>
+  
+    <ion-list class="last">
+      <ion-list-header class="ion-justify-content-between">
+        <ion-label>
+          <small>
+            {{ 'Context.TheLast' | translate }}
+          </small>
+          </ion-label>
+      </ion-list-header>
+  
+  
+      <ion-item lines="none">
+        <div class="icon">
+          <img src="assets/icons/heart.svg" alt="" srcset="">
+        </div>
+        <ion-label>
+          <ion-text>{{ 'Context.YourOrderConfirmed' | translate }} </ion-text><br />
+          <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+            تهانينا! تم حجز موعدك في صالون سوليتير يوم الأربعاء، 20 سبتمبر 2024 - 10:00 م
+          </ion-note>
+          <ion-note color="medium" class="time">
+            <ion-icon name="time-outline"></ion-icon>
+            <b>منذ 6 دقائق</b>
+          </ion-note>
+        </ion-label>
+        <ion-icon class="" name="" slot="end"></ion-icon>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <div class="icon">
+          <img src="assets/icons/heart.svg" alt="" srcset="">
+        </div>
+        <ion-label>
+          <ion-text>{{ 'Context.YourOrderConfirmed' | translate }} </ion-text><br />
+          <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+            تهانينا! تم حجز موعدك في صالون سوليتير يوم الأربعاء، 20 سبتمبر 2024 - 10:00 م
+          </ion-note>
+          <ion-note color="medium" class="time">
+            <ion-icon name="time-outline"></ion-icon>
+            <b>منذ 6 دقائق</b>
+          </ion-note>
+        </ion-label>
+        <ion-icon class="" name="" slot="end"></ion-icon>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <div class="icon">
+          <img src="assets/icons/heart.svg" alt="" srcset="">
+        </div>
+        <ion-label>
+          <ion-text>تم تأكيد حجزك </ion-text><br />
+          <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+            تهانينا! تم حجز موعدك في صالون سوليتير يوم الأربعاء، 20 سبتمبر 2024 - 10:00 م
+          </ion-note>
+          <ion-note color="medium" class="time">
+            <ion-icon name="time-outline"></ion-icon>
+            <b>منذ 6 دقائق</b>
+          </ion-note>
+        </ion-label>
+        <ion-icon class="" name="" slot="end"></ion-icon>
+      </ion-item>
+     
+    </ion-list>
+  </ng-container>
+
+  <ng-template #notification_content>
+    <app-empty-content 
+      title="{{ 'Context.NoCurrentNotifications' | translate }}" 
+      text="{{ 'Context.BookYourFirstAppointmentWithGlo' | translate }}" 
+      icon="assets/icons/empty-notification.svg"></app-empty-content>
+  </ng-template>
+  
+</ion-content>

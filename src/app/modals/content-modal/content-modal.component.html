@@ -1,0 +1,46 @@
+
+<ion-content>
+  <div class="container">
+    <div class="content">
+      <ion-card>
+
+        <ion-row class="ion-justify-content-center">
+          <img [src]="icon" alt="" srcset="">
+        </ion-row>
+        <div class="title ion-text-center">
+          <h3>{{ title }}</h3>
+        </div>
+        <div class="sub-title ion-text-center">
+          <p [innerHTML]="description"></p>
+        </div>
+
+        <ng-container *ngIf="modalContentType === ModalContentType.Info">
+
+          <section class="cancel-order">
+            <ion-buttons> 
+              <ion-button class="">
+                تاريخ الحجز: 26 أبريل 2024 - 10:00 م 
+              </ion-button>
+            </ion-buttons>
+          </section>
+        
+          <section class="infoList">
+            <ion-list>
+              <ion-item lines="none" *ngFor="let info of listInfo">
+                <ion-label>
+                  <ion-text>{{ info.key }}</ion-text>
+                  <b>{{ info.value }}</b>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </section>
+        </ng-container>
+        
+        <div class="footer" *ngIf="modalContentType !== ModalContentType.Info">
+          <ion-button type="button" class="main-button" (click)="onAction()"> {{ actionBtnText }}</ion-button>
+        </div>
+
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-content>
+
+  <app-header headerTitle="{{ 'Headers.Titles.Currency' | translate }}"></app-header>
+
+  <ion-list>
+    <ion-radio-group (ionChange)="handleChange($event)">
+      <ion-item lines="none" *ngFor="let item of list;">
+        <ion-avatar>
+          <img [src]="item.icon" alt="" srcset="">
+        </ion-avatar>
+        <ion-label>
+          <label for="">{{ item.name }}</label>
+        </ion-label>
+        <ion-radio mode="md" [value]="item">{{ item.name }}</ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+</ion-content>

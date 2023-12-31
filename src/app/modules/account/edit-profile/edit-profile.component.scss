@@ -1,0 +1,107 @@
+ion-content{
+    section{
+        display: flex;
+        height: 95vh;
+        flex-direction: column;
+        padding: 1.5rem;
+        .logo-container{
+            img{}
+        }
+        .title{
+            h3{
+                color: #1C1917;
+                font-family: SuisseIntl-SemiBold;
+                font-weight: 500;
+                font-size:20px;
+                line-height: 26px;
+                text-align: right
+            }
+        }
+        .sub-title{
+            p{
+                color: #78716C;
+                font-family: SuisseIntl-Regular;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+    
+        form{
+            margin-bottom: 2rem;
+            .user-image{
+                display: flex;
+                justify-content: center;
+                padding: .5rem;
+                ion-avatar{
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 100%;
+                    -webkit-border-radius: 100%;
+                    -moz-border-radius: 100%;
+                    -ms-border-radius: 100%;
+                    -o-border-radius: 100%;
+                    ion-button{
+                        --background: #000000;
+                        position: absolute;
+                        right: 0px;
+                        bottom: 0px;
+                        padding-inline-start: unset;
+                        padding-inline-end: unset;
+                        --padding-start: unset;
+                        --padding-end: unset;
+                        width: 24px;
+                        height: 24px;
+                        img{
+                            width: 63%;
+                        }
+                    }
+                }
+            }
+            // ion-list{
+            //     background-color: transparent;
+            //     ion-item{
+            //         border: 1px solid #8F7A63;
+            //         border-radius: 10px;
+            //         -webkit-border-radius: 10px;
+            //         -moz-border-radius: 10px;
+            //         -ms-border-radius: 10px;
+            //         -o-border-radius: 10px;
+            //         margin-top: 10px;
+            //         position: relative;
+            //         // ion-label{
+            //         //     color: #8F7A63;
+            //         //     margin-top: 0;
+            //         // }
+            //         // &.item-has-value > ion-label,
+            //         // &.item-has-focus > ion-label{
+            //         //     color: red !important;
+            //         //     top: 16px;
+            //         //     position: unset;
+            //         // }
+            //         // ion-input{
+            //         //     height: 56px;
+            //         //     // --background: aqua;
+            //         //     --padding-top: 0;
+            //         // }
+            //     }
+            
+            // }
+        }
+      
+        .footer{
+            margin-top: auto;
+            text-align: center;
+            p{
+                font-size: 14px;
+                color: #181214;
+                font-family: SuisseIntl-Regular;
+                a{
+                    color: #7F6957;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}   

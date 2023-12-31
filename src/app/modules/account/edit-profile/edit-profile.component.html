@@ -1,0 +1,102 @@
+<ion-content>
+
+  <app-header headerTitle="{{ 'Headers.Titles.EditProfile' | translate }}"></app-header>
+
+<section>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+  
+    <div class="user-image">
+      <ion-avatar>
+        <img src="assets/icons/user.svg" alt="" srcset="">
+        <ion-button>
+          <img src="assets/icons/profile/edit.svg" alt="" srcset="">
+        </ion-button>
+      </ion-avatar>
+    </div>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="floating"> 
+           {{ 'Forms.Inputs.Placeholder.Name' | translate }}
+        </ion-label>
+        <ion-input type="text" formControlName="name" placeholder="{{ 'Forms.Inputs.Placeholder.Name' | translate }}"></ion-input>
+        <ng-container *ngIf="isSubmit && form.get('name').errors">
+          <small class="error-message" *ngIf="form.get('name').errors.required" >
+            {{ 'Forms.Inputs.Validation.EnterName' | translate }}
+          </small>
+        </ng-container>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> 
+          {{ 'Forms.Inputs.Placeholder.EmailAddress' | translate }}
+        </ion-label>
+        <ion-input type="text" formControlName="email" placeholder="{{ 'Forms.Inputs.Placeholder.EmailAddress' | translate }}"></ion-input>
+        <ng-container *ngIf="isSubmit && form.get('email').errors">
+          <small class="error-message" *ngIf="form.get('email').errors.required" >
+            {{ 'Forms.Inputs.Validation.EnterValidEmail' | translate }}
+          </small>
+        </ng-container>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> 
+          {{ 'Forms.Inputs.Placeholder.userName' | translate }}
+        </ion-label>
+      <ion-input type="text" formControlName="userName" placeholder="{{ 'Forms.Inputs.Placeholder.userName' | translate }}"></ion-input>
+        <ng-container *ngIf="isSubmit && form.get('userName').errors">
+          <small class="error-message" *ngIf="form.get('userName').errors.required" >
+            {{ 'Forms.Inputs.Validation.EnterName' | translate }}
+          </small>
+        </ng-container>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> 
+          {{ 'Forms.Inputs.Placeholder.MobileNumber' | translate }}
+        </ion-label>
+        <ion-input type="text" formControlName="phone" placeholder="{{ 'Forms.Inputs.Placeholder.MobileNumber' | translate }}"></ion-input>
+        <ng-container *ngIf="isSubmit && form.get('phone').errors">
+          <small class="error-message" *ngIf="form.get('phone').errors.required" >
+            {{ 'Forms.Inputs.Validation.EnterValidPhoneNumber' | translate }}
+          </small>
+        </ng-container>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> 
+          {{ 'Forms.Inputs.Placeholder.Country' | translate }}
+        </ion-label>
+        <ion-input type="text" formControlName="country" placeholder="{{ 'Forms.Inputs.Placeholder.Country' | translate }}"></ion-input>
+        <ng-container *ngIf="isSubmit && form.get('country').errors">
+          <small class="error-message" *ngIf="form.get('country').errors.required" >
+            {{ 'Forms.Inputs.Placeholder.Country' | translate }}
+          </small>
+        </ng-container>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> 
+          {{ 'Forms.Inputs.Placeholder.Address' | translate }}
+        </ion-label>
+        <ion-input type="text" formControlName="address" placeholder="{{ 'Forms.Inputs.Placeholder.Address' | translate }}"></ion-input>
+        <ng-container *ngIf="isSubmit && form.get('address').errors">
+          <small class="error-message" *ngIf="form.get('address').errors.required" >
+            {{ 'Forms.Inputs.Placeholder.Address' | translate }}
+          </small>
+        </ng-container>
+      </ion-item>
+
+   
+    </ion-list>
+    
+  </form>
+  
+  <div class="footer">
+    <ion-button type="submit" class="main-button" (click)="onSubmit()">{{ 'Buttons.Update' }}</ion-button>
+  </div>
+</section>
+
+
+</ion-content>

@@ -1,0 +1,221 @@
+
+<ion-content>
+  <div class="container">
+    <div class="content">
+      
+      <ion-card>
+        <ion-row class="ion-justify-content-center">
+          <img [src]="icon" alt="" srcset="">
+        </ion-row>
+        <div class="title ion-text-center">
+          <h3>{{ title }}</h3>
+        </div>
+        <div class="sub-title ion-text-center">
+          <p>{{ description }}</p>
+        </div>
+
+        <div [ngSwitch]="formType">
+          <div *ngSwitchCase="inFormType.Gift" class="Gift">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
+              <ion-list>
+                <ion-item>
+                  <ion-label position="floating"> 
+                    {{ 'Forms.Inputs.Placeholder.Name' | translate }}
+                  </ion-label>
+                  <ion-input formControlName="name" placeholder="{{ 'Forms.Inputs.Placeholder.Name' | translate }}"></ion-input>
+                  <ng-container *ngIf="isSubmit && form.get('name').errors">
+                    <small class="error-message" *ngIf="form.get('name').errors.required" >
+                      {{ 'Forms.Inputs.Validation.EnterName' | translate }}
+                    </small>
+                    <small class="error-message" *ngIf="form.get('name').errors.pattern" >
+                      {{ 'Forms.Inputs.Validation.EnterValidName' | translate }}
+                    </small>
+                  </ng-container>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating"> 
+                    {{ 'Forms.Inputs.Placeholder.MobileNumber' | translate }}
+                  </ion-label>
+                  <ion-input  formControlName="phone" placeholder="{{ 'Forms.Inputs.Placeholder.MobileNumber' | translate }}"></ion-input>
+                  <ng-container *ngIf="isSubmit && form.get('phone').errors">
+                    <small class="error-message" *ngIf="form.get('phone').errors.required" >
+                      {{ 'Forms.Inputs.Validation.EnterPhone' | translate }}
+                    </small>
+                    <small class="error-message" *ngIf="form.get('phone').errors.pattern" >
+                      {{ 'Forms.Inputs.Validation.EnterValidPhoneNumber' | translate }}
+                    </small>
+                  </ng-container>
+                </ion-item>
+              </ion-list>
+            </form>
+          </div>
+          <div *ngSwitchCase="inFormType.AddCard" class="AddCard">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
+              <ion-list>
+                <ion-item>
+                  <ion-label position="floating"> 
+                    {{ 'Forms.Inputs.Placeholder.CardNumber' | translate }}
+                  </ion-label>
+                  <ion-input formControlName="placeholder" placeholder="{{ 'Forms.Inputs.Placeholder.CardNumber' | translate }}"></ion-input>
+                  <ng-container *ngIf="isSubmit && form.get('placeholder').errors">
+                    <small class="error-message" *ngIf="form.get('placeholder').errors.required" >
+                      {{ 'Forms.Inputs.Validation.EnterCardNumber' | translate }}
+                    </small>
+                    <small class="error-message" *ngIf="form.get('placeholder').errors.pattern" >
+                      {{ 'Forms.Inputs.Validation.EnterCardNumber' | translate }}
+                    </small>
+                  </ng-container>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating"> 
+                    {{ 'Forms.Inputs.Placeholder.CardName' | translate }}
+                  </ion-label>
+                  <ion-input  formControlName="name" placeholder="{{ 'Forms.Inputs.Placeholder.CardName' | translate }}"></ion-input>
+                  <ng-container *ngIf="isSubmit && form.get('name').errors">
+                    <small class="error-message" *ngIf="form.get('name').errors.required" >
+                      {{ 'Forms.Inputs.Placeholder.CardName' | translate }}
+                    </small>
+                    <small class="error-message" *ngIf="form.get('name').errors.pattern" >
+                      {{ 'Forms.Inputs.Placeholder.CardName' | translate }}
+                    </small>
+                  </ng-container>
+                </ion-item>
+                <ion-row>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label position="floating"> 
+                        {{ 'Forms.Inputs.Placeholder.CVV' | translate }}
+                      </ion-label>
+                      <ion-input  formControlName="cvv" placeholder="{{ 'Forms.Inputs.Placeholder.CVV' | translate }}"></ion-input>
+                      <ng-container *ngIf="isSubmit && form.get('cvv').errors">
+                        <small class="error-message" *ngIf="form.get('cvv').errors.required" >
+                          {{ 'Forms.Inputs.Validation.EnterCVV' | translate }}
+                        </small>
+                        <small class="error-message" *ngIf="form.get('cvv').errors.pattern" >
+                          {{ 'Forms.Inputs.Validation.EnterCVV' | translate }}
+                        </small>
+                      </ng-container>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label position="floating"> 
+                        {{ 'Forms.Inputs.Placeholder.ExpiryDate' | translate }}
+                      </ion-label>
+                      <ion-input  formControlName="date" placeholder="{{ 'Forms.Inputs.Placeholder.ExpiryDate' | translate }}"></ion-input>
+                      <ng-container *ngIf="isSubmit && form.get('date').errors">
+                        <small class="error-message" *ngIf="form.get('date').errors.required" >
+                          {{ 'Forms.Inputs.Validation.EnterExpiryDate' | translate }}
+                        </small>
+                        <small class="error-message" *ngIf="form.get('date').errors.pattern" >
+                          {{ 'Forms.Inputs.Validation.EnterExpiryDate' | translate }}
+                        </small>
+                      </ng-container>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-list>
+            </form>
+          </div>
+          <div *ngSwitchCase="inFormType.Notes" class="Notes">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
+              <ion-list>
+                <section class="radio-list">
+                  <div class="radio-custom">
+                    <input formControlName="rate" type="radio" value="1" id="1">
+                    <label for="1"></label>
+                  </div>
+                  <div class="radio-custom">
+                    <input formControlName="rate" type="radio" value="2" id="2">
+                    <label for="2"></label>
+                  </div>
+                  <div class="radio-custom">
+                    <input formControlName="rate" type="radio" value="3" id="3">
+                    <label for="3"></label>
+                  </div>
+                  <div class="radio-custom">
+                    <input formControlName="rate" type="radio" value="4" id="4">
+                    <label for="4"></label>
+                  </div>
+                  <div class="radio-custom">
+                    <input formControlName="rate" type="radio" value="5" id="5">
+                    <label for="5"></label>
+                  </div>
+                  <ng-container *ngIf="isSubmit && form.get('rate').errors">
+                    <small class="error-message" *ngIf="form.get('rate').errors.required" >
+                      {{ 'Forms.Inputs.Validation.EnterRateStars' | translate }}
+                    </small>
+                  </ng-container>
+                </section>
+                <p class="ion-text-start">{{ 'Context.Notes' | translate }}</p>
+                <ion-item>
+                  <ion-textarea 
+                    label="Fixed label" 
+                    labelPlacement="fixed"
+                    formControlName="notes" 
+                    placeholder="{{ 'Forms.Inputs.Validation.RateComment' | translate }}"></ion-textarea>
+                    <ng-container *ngIf="isSubmit && form.get('notes').errors">
+                      <small class="error-message" *ngIf="form.get('notes').errors.required" >
+                        {{ 'Forms.Inputs.Validation.EnterRateComment' | translate }}
+                      </small>
+                    </ng-container>
+                </ion-item>
+              </ion-list>
+              
+            </form>
+          </div>
+          <div *ngSwitchCase="inFormType.CancelOrder" class="CancelOrder">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    
+              <ion-list>
+          
+                <ion-item>
+                  <ion-select formControlName="reason" aria-label="reasons" interface="action-sheet" placeholder="السبب*">
+                    <ion-select-option value="reason1">reason1</ion-select-option>
+                    <ion-select-option value="reason2">reason2</ion-select-option>
+                    <ion-select-option value="reason3">reason3</ion-select-option>
+                  </ion-select>
+                  <ng-container *ngIf="isSubmit && form.get('reason').errors">
+                    <small class="error-message" *ngIf="form.get('reason').errors.required" >
+                      {{ 'Forms.Inputs.Validation.EnterReason' | translate }}
+                    </small>
+                  </ng-container>
+                </ion-item>
+              
+                <p class="ion-text-start">{{ 'Context.Notes' | translate }}</p>
+                <ion-item>
+                  <ion-textarea 
+                    label="Fixed label" l
+                    abelPlacement="fixed" 
+                    formControlName="notes"
+                    placeholder="هذا النص هو مثال لنص يمكن أن يستبد المساحة"></ion-textarea>
+                    <ng-container *ngIf="isSubmit && form.get('notes').errors">
+                      <small class="error-message" *ngIf="form.get('notes').errors.required" >
+                        {{ 'Forms.Inputs.Validation.EnterRateComment' | translate }}
+                      </small>
+                    </ng-container>
+                </ion-item>
+              </ion-list>
+              
+            </form>
+          </div>
+        </div>
+
+        <div class="footer">
+          <ion-button 
+            type="button" 
+            class="main-button active" 
+            [ngClass]="{'fulle-width': !confirmOnlyBtn}" 
+            (click)="onAction()"> {{actionBtnText}}</ion-button>
+          <ion-button 
+            type="button" 
+            class="" 
+            (click)="onCloseModal()" 
+            *ngIf="confirmOnlyBtn"
+            > {{ confirmOnlyBtnText }}</ion-button>
+        </div>
+    
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

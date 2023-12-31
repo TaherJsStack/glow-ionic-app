@@ -1,0 +1,100 @@
+
+<ion-content class="ion-padding">
+  
+  <!-- header ion-item -->
+  <section class="header">
+    <ion-item lines="none" >
+      <ion-thumbnail>
+        <img alt="" src="assets/icons/user.svg" />
+      </ion-thumbnail>
+      <ion-label>
+        <p>أهلا! 👋</p>
+        <h1 class="title">نورا عبدالله</h1>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button shape="round" slot="end">
+          <ion-badge></ion-badge>
+          <img alt="" src="assets/icons/bag.svg" />
+        </ion-button>
+        <ion-button shape="round" slot="end" routerLink="/home/discover/notification">
+          <img alt="" src="assets/icons/notification.svg" />
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </section>
+  <!-- end header ion-item -->
+
+  <!-- ion-searchbar -->
+  <ion-item class="section-sction" lines="none">
+    <ion-searchbar search-icon="search-circle" placeholder="{{ 'Forms.Inputs.Placeholder.SearchInSalon' | translate }}" routerLink="/search"></ion-searchbar>
+    <ion-button fill="clear" routerLink="/home/discover/filter">
+      <img src="assets/icons/setting.svg" alt="" srcset="">
+    </ion-button>
+  </ion-item>
+  <!-- end ion-searchbar -->
+
+  <!-- app-slider -->
+  <app-slider></app-slider>
+  <!-- end app-slider -->
+
+  <!-- ------------------------ -->
+  <app-slider-container
+    id="homeStep1"
+    type="labels"
+    title=""
+    [dataList]="labelsList"
+    [isItemDetail]="true"
+    [slidesPerView]="2.5"
+    [slidesSpaceBetween]="15"
+  ></app-slider-container>
+  <!-- ------------------------ -->
+
+  <!-- ------------------------ -->
+  <app-slider-container
+    id="homeStep2"
+    type="most-rated"
+    title="{{ 'Context.MostRated' | translate }}"
+    path="/categories/categories/mostRated"
+    cardPathTo="/categories/salon/type"
+    packagePathTo='/categories/booking/111'
+    [dataList]="list"
+    [isItemDetail]="true"
+    [slidesPerView]="1.4"
+    [slidesSpaceBetween]="7"
+  ></app-slider-container>
+  <!-- ------------------------ -->
+
+  <!-- Best offers -->
+  <!-- ------------------------ -->
+  <app-slider-container
+    id="homeStep3"
+    type="best-offers"
+    title="{{ 'Context.BestOffers' | translate }}"
+    path="/categories/categories/offers"
+    cardPathTo="/categories/salon/type"
+    packagePathTo='/categories/booking/111'
+    [showTitle]="true"
+    [dataList]="bestOffersList"
+    [isItemDetail]="true"
+    [slidesPerView]="1.4"
+    [slidesSpaceBetween]="7"
+  ></app-slider-container>
+  <!-- ------------------------ -->
+
+    <!-- Offers Less Than 300  -->
+  <!-- ------------------------ -->
+  <app-slider-container
+    id="homeStep4"
+    type="offers-less-than-300"
+    title=" ر.س {{ 'Context.OffersLessThan-300' | translate }}"
+    path="/categories/categories/offers"
+    cardPathTo="/categories/salon/type"
+    packagePathTo='/categories/booking/111'
+    [dataList]="OffersLessThan300List"
+    [isItemDetail]="true"
+    [slidesPerView]="1.4"
+    [slidesSpaceBetween]="7"
+  ></app-slider-container>
+  <!-- ------------------------ -->
+
+</ion-content>

@@ -1,0 +1,192 @@
+<ion-content>
+
+  <section>
+    <app-header [headerTitle]="''"></app-header>
+
+      <header>
+        <div class="image">
+          <img src="assets/images/specialist.svg" alt="" srcset="">
+        </div>
+        <h4>راندا العامري</h4>
+        <p>@RandaAl3mry</p>
+        <label>
+          5.0
+          <img src="assets/icons/star.svg" alt="" srcset="">
+        </label>
+      </header>
+
+      <!-- ion-segment -->
+      <ion-segment [scrollable]="true" value="heart" [(ngModel)]="selectedSegment" mode="ios">
+        <ion-segment-button value="Aboutus">
+          <p> {{ 'Context.Details' | translate }}</p>
+        </ion-segment-button>
+        <ion-segment-button value="Gallery">
+          <p> {{ 'Context.Business' | translate }} </p>
+        </ion-segment-button>
+        <ion-segment-button value="Reviews">
+          <p>{{ 'Context.Reviews' | translate }}</p>
+        </ion-segment-button>
+      </ion-segment>
+    
+      <!-- selectedSegment -->
+      <div [ngSwitch]="selectedSegment">
+        
+        <!-- --------------------------------------------- -->
+        <!-- ----------------Aboutus--------------------- -->
+        <!-- --------------------------------------------- -->
+        <div *ngSwitchCase="'Aboutus'">
+
+          <div class="section-title">
+            <h3>{{ 'Context.BriefAboutMe' | translate }} </h3>
+          </div>
+          <ion-text>
+            هناك العديد من الأشكال المتاحة لنصوص لوريم إيبسوم ، لكن الغالبية تعرضت للتغيير بشكل ما ، عن طريق إدخال بعض الفكاهة أو الكلمات العشوائية التي لا تبدو قابلة للتصديق إلى حد ما.
+          </ion-text>
+
+          <section class="work-time">
+            <div class="section-title">
+              <h3>{{ 'Context.TimesOfWork' | translate }} </h3>
+            </div>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="5">الاثنين - الجمعة:</ion-col>
+                <ion-col size="7">08:00 ص - 08:00 م</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="5">السبت - الأحد:</ion-col>
+                <ion-col size="7">10:00 ص - 10:00 م</ion-col>
+              </ion-row>
+            </ion-grid>
+          </section>
+
+          <section class="contact-us">
+            <div class="section-title">
+              <h3> {{ 'Context.ConnectWithUs' | translate }}</h3>
+            </div>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="10"> (955) 516-040-515</ion-col>
+                <ion-col size="2">
+                  <ion-buttons>
+                    <ion-button>
+                      <img src="assets/icons/message.svg" alt="" srcset="">
+                    </ion-button>
+                  </ion-buttons>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </section>
+
+
+
+        </div>
+
+        <!-- --------------------------------------------- -->
+        <!-- ----------------Gallery--------------------- -->
+        <!-- --------------------------------------------- -->
+        <div *ngSwitchCase="'Gallery'">
+          <ion-list class="gallery">
+            <ion-list-header class="ion-justify-content-between">
+              <ion-label>
+                <div class="section-title">
+                  <h3>{{ 'Context.TheOffer' | translate }} </h3>
+                </div>
+                </ion-label>
+              <ion-button fill="clear" routerLink=""> {{ 'Buttons.ShowMore' | translate }}</ion-button>
+            </ion-list-header>
+        
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6" *ngFor="let path of galleryList">
+                  <ion-card>
+                    <img [src]="path.image" alt="" srcset="">
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-list>
+        </div>
+
+        <!-- --------------------------------------------- -->
+        <!-- ----------------Reviews--------------------- -->
+        <!-- --------------------------------------------- -->
+        <div *ngSwitchCase="'Reviews'">
+          <ion-list class="reviews">
+            
+            <ion-card>
+              <ion-card-header>
+                <div class="image">
+                  <img alt="" src="assets/icons/reviews/reviews.svg" />
+                </div>
+                <ion-label>
+                  <div class="section-title">
+                    <h3>Marry Willions </h3>
+                  </div>
+                  <app-show-rating [rating]="2"></app-show-rating>
+                </ion-label>
+                <small class="date">04 أبريل 2023</small>
+              </ion-card-header>
+              <hr>
+              <ion-card-content>
+                <ion-note color="medium" class="">
+                  “هناك حقيقة مثبتة منذ زمن طويل وهي 
+                  أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي”                 
+                </ion-note>
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-header>
+                <div class="image">
+                  <img alt="" src="assets/icons/reviews/reviews.svg" />
+                </div>
+                <ion-label>
+                  <div class="section-title">
+                    <h3>Marry Willions </h3>
+                  </div>
+                  <app-show-rating [rating]="2"></app-show-rating>
+                </ion-label>
+                <small class="date">04 أبريل 2023</small>
+              </ion-card-header>
+              <hr>
+              <ion-card-content>
+                <ion-note color="medium" class="">
+                  “هناك حقيقة مثبتة منذ زمن طويل وهي 
+                  أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي”                 
+                </ion-note>
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-header>
+                <div class="image">
+                  <img alt="" src="assets/icons/reviews/reviews.svg" />
+                </div>
+                <ion-label>
+                  <div class="section-title">
+                    <h3>Marry Willions </h3>
+                  </div>
+                  <app-show-rating [rating]="2"></app-show-rating>
+                </ion-label>
+                <small class="date">04 أبريل 2023</small>
+              </ion-card-header>
+              <hr>
+              <ion-card-content>
+                <ion-note color="medium" class="">
+                  “هناك حقيقة مثبتة منذ زمن طويل وهي 
+                  أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي”                 
+                </ion-note>
+              </ion-card-content>
+            </ion-card>
+          </ion-list>
+   
+        </div>
+
+      </div>
+
+  </section>
+  </ion-content>
+  
+  <ion-footer>
+    <div class="footer">
+      <ion-button type="button" class="main-button">{{ 'Buttons.BookNow' | translate }}</ion-button>
+    </div>
+  </ion-footer>

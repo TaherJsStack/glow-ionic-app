@@ -1,0 +1,168 @@
+.labels{
+    background-color: #F5F4F1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 145px;
+    height: 64px;
+    padding: 8px 16px 8px 8px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+    margin-top: 1rem;
+    .title{
+      b{
+        font-weight: 500;
+        font-size: 12px;
+      }
+    }
+    .icon-container{
+      background-color: white;
+      padding: 6px;
+      border-radius: 100px;
+      width: 40px;
+      height: 40px;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      -ms-border-radius: 100px;
+      -o-border-radius: 100px;
+  }
+  }
+ion-card{
+  position: relative;
+  margin: 0 0 10px;
+  .image{
+    img{ 
+      width: -webkit-fill-available;
+    }
+  }
+  ion-card-content{
+    padding: 0 8px !important;
+    .details{
+      ion-item {
+        --background: rgba(255, 255, 255, 0);
+        --min-height: 35px;
+        --inner-padding-start:0;
+        --inner-padding-end:0;
+        --padding-start: 0;
+        --padding-end: 0;
+        margin: px 5px;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        display: flex;
+        align-items: center;
+        ion-thumbnail{
+          max-width: 38px;
+          display: flex;
+          margin: auto;
+        }
+        ion-label { 
+          b{
+            font-size: 14px;
+            color: #1C1917;
+            font-family: SuisseIntl-SemiBold;
+            margin-bottom: 4px;
+            display: inline-block;
+          }
+          ion-row{
+            img{
+              width: 14px;
+              height: 14px;
+            }
+            p{
+              font-size: 12px;
+              color: #44403C;
+              font-family: SuisseIntl-Regular;
+            }
+          }
+        }
+        ion-buttons{
+          padding: 0;
+          margin: 0;
+          ion-button{
+            --background: #FAFAF9;
+            --border-radius: 8px;
+            width: 62px;
+            height: 34px;
+            display: flex;
+            justify-content: space-between;
+            &::part(native){
+              padding: 0;
+              margin: 0;
+            }
+            b{ }
+            img{
+              margin-right: 5px;
+            }
+          }
+        }
+        .price{
+          s{
+            display: inline;
+            font-size: 12px;
+            color: #78716C;
+            font-family: SuisseIntl-Light;
+          }
+          b{
+            font-size: 14px;
+            color: #1C1917;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .card-icons{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    background-color: #F5F4F1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    ion-buttons{ 
+      ion-button {
+      }
+    }
+  }
+}
+
+.slider-container {
+  ion-item::part(detail-icon) {
+    background-color: var(--second-color);
+    border-radius: 22px;
+    height: 22px;
+    width: 22px;
+  }
+  ion-item {
+    --background: rgba(255, 255, 255, 0);
+    --detail-icon-color: #fff;
+    --detail-icon-font-size: 1.8em;
+    --detail-icon-opacity: 1;
+    --min-height: 35px;
+    margin: 12px 0px;
+    ion-label {
+      margin: 0;
+    }
+    ion-icon { }
+  }
+}
+
+ion-slides {
+  padding: 0 0px;
+  ion-slide {
+    padding: 0px 0;
+  }
+}
+    
+  //   :host-context(body[dir="rtl"]) {}
+    

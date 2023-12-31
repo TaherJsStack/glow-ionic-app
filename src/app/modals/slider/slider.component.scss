@@ -1,0 +1,25 @@
+.slid-container{
+    position: relative;
+    .text{
+        position: absolute;
+        top: 20%;
+        color: aliceblue;
+        font-family: SuisseIntl-Regular;
+
+        h5{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        p{
+            font-size: 16px;
+            width: 70%;
+            margin: auto;
+        }
+
+    }
+}
+
+ion-slides{
+    height: auto;
+    margin: 10px 0;
+}

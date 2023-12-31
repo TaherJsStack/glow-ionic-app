@@ -1,0 +1,53 @@
+<ion-card>
+  <ion-card-header>
+    <ion-row>
+      <ion-col size="9">
+        <h6>{{'Context.ReservationID' | translate }}: {{ item.id }}</h6>
+        <ion-note>{{'Context.BookingDate' | translate }}:  {{ item.date }} </ion-note>
+      </ion-col>
+      <ion-col size="3" class="thumbnail-container">
+        <ion-thumbnail *ngIf="cardStateType === InputCardStateType.Coming" (click)="qrCodeButton.emit({value:true,type: cardStateType})">
+          <img src="assets/icons/QR-Code.svg" alt="" srcset="">
+        </ion-thumbnail>
+        
+        <ion-buttons *ngIf="cardStateType === InputCardStateType.Ending || cardStateType === InputCardStateType.Canceled">
+          <ion-button class="ending" *ngIf="cardStateType === InputCardStateType.Ending">
+            {{ 'Buttons.Completed' | translate }}
+          </ion-button>
+          <ion-button class="canceled" *ngIf="cardStateType === InputCardStateType.Canceled">
+            {{ 'Buttons.Canceled' | translate }}
+          </ion-button>
+        </ion-buttons>
+
+      </ion-col>
+    </ion-row>
+  </ion-card-header>
+  <ion-card-content>
+    <section class="service-card">
+      <ion-item lines="none" detail="false" >
+        <ion-avatar>
+          <img src="assets/icons/services2/services1.svg" alt="" srcset="">
+        </ion-avatar>
+        <ion-label>
+          <ion-text>{{ item.name }} </ion-text>
+          <ion-row class="location">
+            <img src="assets/icons/vector.svg" alt="" srcset="">
+            <p> {{ item.location }}</p>
+          </ion-row>
+          <ion-buttons slot="end">
+            <ion-button shape="round" slot="end">
+              <span>{{ item.rate }}</span>
+              <img alt="" src="assets/icons/star.svg" />
+            </ion-button>
+          </ion-buttons>
+        </ion-label>
+      </ion-item>
+    </section>
+  </ion-card-content>
+  <div class="card-footer">
+    <ion-buttons>
+      <ion-button *ngIf="!isSingleBtn" (click)="cancelButton.emit({value:true,type: cardStateType})">{{ btnText }}</ion-button>
+      <ion-button (click)="actionButton.emit({value:true,type: cardStateType})" class="active" [ngClass]="{'fulle-width': isSingleBtn}">{{ activeBtnText }}</ion-button>
+    </ion-buttons>
+  </div>
+</ion-card>

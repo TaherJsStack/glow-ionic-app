@@ -1,0 +1,60 @@
+<ion-content class="ion-padding">
+  <section>
+    <app-header headerTitle="{{'Headers.Titles.WriteReview' | translate}} "></app-header>
+    <app-package-card-info 
+      [inputButtonType]="" 
+      [cardInfoList]="offersList"
+      (QrCodeButton)="onQrCodeButtonButtonFn($event)"
+      ></app-package-card-info>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+      <h5 class="ion-text-center">{{ 'Context.YourExperience' | translate }}</h5>
+      <ion-list>
+        <div class="radio-list">
+          <div class="radio-custom">
+            <input formControlName="rate" type="radio" value="1" id="1">
+            <label for="1"> </label>
+          </div>
+          <div class="radio-custom">
+            <input formControlName="rate" type="radio" value="2" id="2">
+            <label for="2"></label>
+          </div>
+          <div class="radio-custom">
+            <input formControlName="rate" type="radio" value="3" id="3">
+            <label for="3"></label>
+          </div>
+          <div class="radio-custom">
+            <input formControlName="rate" type="radio" value="4" id="4">
+            <label for="4"></label>
+          </div>
+          <div class="radio-custom">
+            <input formControlName="rate" type="radio" value="5" id="5">
+            <label for="5"></label>
+          </div>
+        </div>
+        <p class="ion-text-start">{{'Context.Notes' | translate}}</p>
+        <ion-textarea 
+          label="Fixed label" 
+          labelPlacement="fixed"
+          formControlName="notes" 
+          placeholder="اكتب تعليقك هنا .."
+          [autoGrow]="true"
+          rows="6"
+          ></ion-textarea>
+      </ion-list>
+    </form>
+    <div class="footer">
+      <ion-button 
+        type="button" 
+        class="main-button active" 
+        (click)="saveBtn()"
+      > {{ 'Buttons.Save' | translate }}
+      </ion-button>
+      <ion-button 
+        class="" 
+        type="button"
+        (click)="cancelBtn()"
+        > {{ 'Buttons.Close' | translate }} 
+      </ion-button>
+    </div>
+  </section>
+</ion-content>

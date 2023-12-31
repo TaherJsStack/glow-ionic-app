@@ -1,0 +1,238 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+/* Core CSS required for Ionic components to work properly */
+
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: SuisseIntl-SemiBold;
+  src: url(./assets/fonts/SuisseIntl-SemiBold.ttf);
+}
+@font-face {
+  font-family: SuisseIntl-Medium;
+  src: url(./assets/fonts/SuisseIntl-Medium.ttf);
+}
+@font-face {
+  font-family: SuisseIntl-Regular;
+  src: url(./assets/fonts/SuisseIntl-Regular.ttf);
+}
+@font-face {
+  font-family: SuisseIntl-Light;
+  src: url(./assets/fonts/alfont_com_AlFont_com_SuisseIntl-Light.otf);
+}
+@font-face {
+  font-family: Ubuntu-Light;
+  src: url(./assets/fonts/Ubuntu-Light.ttf);
+}
+
+ion-checkbox{
+  --background-checked: #8F7A63;
+  --border-color-checked: #8F7A63;
+}
+
+.intro-swiper-slide{
+  .swiper-pagination {
+    bottom: -14px !important;
+    .swiper-pagination-bullet{
+      background-color: #7F6957;
+      width: 20px;
+      height: 4px;
+      border-radius:5px;
+      -webkit-border-radius:5px;
+      -moz-border-radius:5px;
+      -ms-border-radius:5px;
+      -o-border-radius:5px;
+      &.swiper-pagination-bullet-active{
+        width: 36px;
+      }
+    }
+  }
+}
+
+ion-content {
+  --background: #fafaf9;
+}
+
+ion-list{
+  background-color: transparent !important;
+}
+
+.home-swiper-slide{
+  .swiper-pagination {
+    bottom: 7px !important;
+    .swiper-pagination-bullet{
+      background-color: #ffffff;
+      width: 20px;
+      height: 4px;
+      border-radius:5px;
+      -webkit-border-radius:5px;
+      -moz-border-radius:5px;
+      -ms-border-radius:5px;
+      -o-border-radius:5px;
+      &.swiper-pagination-bullet-active{
+        width: 36px;
+      }
+    }
+  }
+}
+
+.main-button{
+  height: 56px;
+  width: 100%;
+  --border-radius: 10px;
+  --background: #7F6957;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: SuisseIntl-SemiBold;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+}
+
+.main-border{
+  border: 1px solid #E7E5E4;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+}
+
+.ng-otp-input-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  input{
+    width: 71px !important;
+    height: 71px !important;
+    font-size: 28px !important;
+    font-weight: 700;
+    color: #7F6957;
+    border-color: #7F6957;
+    font-family: SuisseIntl-SemiBold;
+  }
+}
+
+.custom-action-sheet-class {
+  text-align: center;
+}
+
+.button-padding-0{
+  --padding-start: 0;
+  --padding-top	:0;
+  --padding-bottom:0;
+  --padding-end:0;
+}
+
+.onOpenModal {
+  --background: transparent !important;
+  &.backdropDismissModal{
+    --height: auto;
+    --min-height: auto;
+    --max-height: auto;
+    &::part(content),
+      &.modal-wrapper {
+      position: fixed !important;
+      bottom: 0;
+      height: 70% !important;
+      max-height: 70%;
+      // box-shadow: 0px 0px 5px #58595b !important;
+    }
+  }
+}
+
+.section-title{
+  h3{
+    color: #1C1917;
+    font-size: 16px;
+    font-family: SuisseIntl-SemiBold;
+  }
+}
+
+form{
+  ion-list{
+    ion-item{
+      margin-bottom: 1.3rem;
+      --min-height: 56px;
+      --max-height: 56px;
+      --height: 56px;
+      position: relative;
+      border: 1px solid #8F7A63;
+      margin-top: 10px;
+      overflow: visible;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      &::part(native){
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+      }
+      ion-label{
+        color: #8F7A63 !important;
+        margin-top: 0;
+        position: absolute;
+        top: -22%;
+      }
+      &.item-has-value > ion-label,
+      &.item-has-focus > ion-label{
+          top: 16px;
+          position: unset;
+      }
+      ion-input{
+          input {
+            padding: 0 !important;
+            color: #1C1917 !important;
+            font-size: 16px !important;
+            font-family: SuisseIntl-Medium !important;
+          }
+          // &::past(native){
+          //   max-height: 56px
+          // }
+        }
+        &:has(.error-message){
+          position: relative;
+          overflow: visible;
+          .error-message{
+            color: red;
+            bottom: -1rem;
+            position: absolute;
+            font-family: SuisseIntl-Light;
+          }
+        }
+  
+    }
+  }
+}

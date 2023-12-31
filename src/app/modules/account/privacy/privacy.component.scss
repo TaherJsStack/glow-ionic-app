@@ -1,0 +1,41 @@
+ion-card{
+    min-height: 88%;
+    ion-card-header{
+        ion-card-title{
+            color: #1C1917;
+            font-size: 16px;
+            font-family: SuisseIntl-Medium;
+            text-align: center;
+            span{
+                color: #8F7A63;
+            }
+        }
+        ion-card-subtitle{
+            font-size: 11px;
+            color: #44403C;
+            font-family: SuisseIntl-Light;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+    }
+    ion-card-content{
+        ul{
+            padding: 0;
+            b{
+                color: #1C1917;
+                font-size: 14px;
+                font-family: SuisseIntl-Medium;
+                margin-top: 18px;
+                display: block;
+            }
+            li{
+                margin-right: 20px;
+                color: #78716C;
+                font-size: 12px;
+                font-family: SuisseIntl-Regular;
+                margin-top: 10px;
+                line-height: 1.8;
+            }
+        }
+    }
+}

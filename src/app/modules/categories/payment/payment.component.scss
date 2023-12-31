@@ -1,0 +1,106 @@
+@import '../../../../assets/scss/global';
+
+ion-list{
+    background: transparent;
+    ion-item {
+        --background: #F5F4F1;
+        --inner-padding-end: 0px;
+        --padding-start: 15px;
+        --padding-end: 5px;
+        --background: #ffffff;
+        border: 2px solid #F3F4F6;
+        margin: 0;
+        margin-top: 0.4rem;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        ion-label{
+            padding: 0 10px;
+            ion-text{
+                @extend %ion-text
+             }
+            ion-note{
+                font-size: 12px;
+                color: #78716C;
+                display: block;
+            }
+        }
+    }
+
+}
+
+
+.send-gift{
+    margin-top: 1rem;
+    ion-item{
+        background: #1C1917;
+        --background: #1C1917;
+        --padding-start: 10px;
+        height: 72px;
+        display: flex;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        ion-avatar{
+            width: 48px;
+            height: 48px;
+            padding: 4px;
+            margin-left: 10px;
+            line-height: 75px;
+            background: #8F7A63;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+        }
+        ion-label{
+            ion-text{
+                @extend %ion-text;
+                color: #eeecec;
+                font-family: SuisseIntl-Regular;
+            }
+            ion-note{
+                color: #fff;
+                font-size: 12px;
+                font-family: SuisseIntl-Regular;
+
+            }
+        }
+    }
+}
+
+ion-footer{
+    .total-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .total{
+            color: #F5F4F1;
+            b{
+                color: #1C1917;
+                font-size: 14px;
+            }
+            p{
+                color: #78716C;
+                font-size: 14px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+:host-context(body[dir="ltr"]) {
+    .send-gift{
+        ion-item{
+            ion-avatar{
+                margin-left: unset;
+                margin-right: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<ion-content class="ion-padding">
+  
+  <app-header headerTitle="{{ 'Headers.Titles.Paying' | translate }} الدفع"></app-header>
+  
+  <section>
+    <div class="section-title">
+      <h3> {{ 'Context.MyServices' | translate }}</h3>
+    </div>
+
+    <app-package-card-info [inputButtonType]="ButtonType.Delete" [cardInfoList]="offersList"></app-package-card-info>
+
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h3> {{ 'Context.DiscountCode' | translate }} </h3>
+    </div>
+    <ion-list class="discount-code">
+      <ion-item lines="none" detail="false">
+        <ion-input label="Floating Input" label-placement="floating" placeholder="ادخل كود الخصم"></ion-input>
+        <ion-label>
+        </ion-label>
+        <ion-buttons>
+          <ion-button>
+            {{ 'Buttons.Apply' | translate }}
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  </section>
+
+  <section class="send-gift">
+
+    <ion-item lines="none" detail="false" button (click)="showFromModal(modalFormType.Gift,'إرسال كهدية','أضف تفاصيل المستلم', 'حفظ', '')">
+      <ion-avatar>
+        <img src="assets/icons/gift-white.svg" alt="" srcset="">
+      </ion-avatar>
+      <ion-label>
+        <ion-text> {{ 'Context.SendItAsGift' | translate }} </ion-text>
+        <br />
+        <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+          {{ 'Context.MakeYourLovedOnes' | translate }}
+        </ion-note>
+      </ion-label>
+      <img src="assets/icons/next.svg" alt="" srcset="">
+    </ion-item>
+  </section>
+
+  <app-payment-methods (selectesCard)="selectesCard($event)"></app-payment-methods>
+
+  <app-list-info [listInfo]="listInfo" ></app-list-info>
+
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col size="8">
+      <div class="footer">
+        <ion-button type="button" class="login main-button" (click)="onPay()"> {{ 'Buttons.Pay' | translate }}</ion-button>
+      </div>
+    </ion-col>
+    <ion-col size="4" class="ion-text-center total-container">
+      <div class="total">
+        <b>
+          1480.00 
+        </b>
+        <p>ر.س</p>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-footer>

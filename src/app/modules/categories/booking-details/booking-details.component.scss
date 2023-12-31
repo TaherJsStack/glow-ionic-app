@@ -1,0 +1,27 @@
+
+ion-buttons{
+    margin-top: 1rem;
+    width: 100%;
+    background: #FEF3F2;
+    height: 48px;
+    ion-button{
+        width: 100%;
+        color: #F04438;
+        font-size: 14px;
+        font-family: SuisseIntl-Regular;
+        img{
+            margin-left: 1rem;
+        }
+    }
+}
+
+:host-context(body[dir="ltr"]) {
+    ion-buttons{
+        ion-button{
+            img{
+                margin-left: unset;
+                margin-right: 1rem;
+            }
+        }
+    }
+}

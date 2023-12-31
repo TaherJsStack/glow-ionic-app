@@ -1,0 +1,10 @@
+<section class="infoList">
+  <ion-list>
+    <ion-item lines="none" *ngFor="let info of listInfo">
+      <ion-label>
+        <ion-text>{{ info.key }}</ion-text>
+        <b>{{ info.value }}</b>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</section>

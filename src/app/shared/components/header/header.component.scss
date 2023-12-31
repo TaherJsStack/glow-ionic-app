@@ -1,0 +1,51 @@
+
+ion-header {
+    // border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    ion-toolbar {
+      --background: transparent;
+      .ion-toolbar {
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      ion-buttons{
+        width: 35px;
+        height: 20px;
+        justify-content: center;
+        ion-back-button{
+          font-size: 13px;
+        }
+        ion-button{
+          --padding-start: 0;
+          --padding-end: 0;
+          img{ }
+        }
+      }
+      ion-title{
+        color: #1C1917;
+        font-size: 16px;
+        font-family: SuisseIntl-SemiBold;
+      }
+    }
+  }
+  
+  :host-context(body[dir="ltr"]) {
+    ion-header {
+      ion-toolbar {
+        ion-buttons{
+          ion-back-button{
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+  
+  
+  

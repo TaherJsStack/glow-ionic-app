@@ -1,0 +1,26 @@
+
+<ion-content fullscreen="true">
+  <section class="form">
+  
+    <app-header [headerTitle]="''"></app-header>
+
+    <div class="title">
+        <h3>{{ 'Context.EnterCode' | translate }} OTP</h3>
+    </div>
+    <div class="sub-title ion-margin-bottm">
+      <p>{{ 'Context.CodeSent' |translate }} OTP {{ 'Context.To' | translate}} (406) 555-0120</p>
+    </div>
+    
+    <ng-otp-input class="ion-margin-top" (onInputChange)="onOtpChange($event)"  [config]="{length:4}"></ng-otp-input>
+
+    <div class="resend ion-margin-top">
+      <p> {{ 'Context.ResendTheCode' | translate }} <span> 00:{{ sendOTPAfter }} </span></p>
+    </div>
+  
+    <div class="footer">
+      <ion-button type="submit" class="main-button">{{ 'Buttons.Confirm' | translate }}</ion-button>
+    </div>
+  </section>
+  
+  </ion-content>
+  

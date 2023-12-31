@@ -1,0 +1,47 @@
+ <ion-card (click)="navigate()">
+  <div class="card-icons">
+    <ion-buttons>
+      <ng-container *ngIf="isHeart; else gift">
+        <app-favorite-btn ></app-favorite-btn>
+      </ng-container>
+      <ng-template #gift>
+          <ion-button fill="clear" slots="icon-only">
+          <img src="assets/icons/gift.svg" alt="" srcset="">
+        </ion-button>
+      </ng-template>
+    </ion-buttons>
+  </div>
+  <div class="image">
+    <img [src]="image" />
+  </div>
+  <ion-card-content >
+    <div class="details">
+    
+      <ion-item lines="none" detail="false">
+        <ion-thumbnail>
+          <img alt="" [src]="icon" />
+        </ion-thumbnail>
+        <ion-label>
+          <b class="title">{{ title }}</b>
+          <ion-row class="location">
+            <img src="assets/icons/vector.svg" alt="" srcset="">
+            <p>{{ location }}</p>
+          </ion-row>
+        </ion-label>
+        
+        <ion-buttons *ngIf="!offer" slot="end">
+          <ion-button shape="round" slot="end">
+            <b>{{ rate }}</b>
+            <img alt="" src="assets/icons/star.svg" />
+          </ion-button>
+        </ion-buttons>
+
+        <div *ngIf="offer" class="price">
+          <s>{{ offer }} ر.س </s>
+          <b>{{ price }} ر.س </b>
+        </div>
+
+      </ion-item>
+    </div>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,13 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md" mode="ios">
+    <ion-buttons slot="start" *ngIf="isBackButton">
+      <ion-back-button text="" default-href="#" router-direction="forward" [icon]="forwardIcon" ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <img [src]="shareIcon" alt="" srcset="">
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ headerTitle }}</ion-title>
+  </ion-toolbar>
+</ion-header>

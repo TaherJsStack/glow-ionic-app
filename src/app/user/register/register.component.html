@@ -1,0 +1,72 @@
+
+<ion-content fullscreen="true">
+  <section class="form">
+  
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="" srcset="">
+    </div>
+    <div class="title">
+        <h3>{{ 'Context.RegisterNow' | translate }}!</h3>
+    </div>
+    <div class="sub-title">
+      <p> {{ 'Context.EnterYourInformationBelow' | translate }} </p>
+    </div>
+  
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" [ngClass]="">
+  
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating"> {{ 'Forms.Inputs.Placeholder.Name' | translate }} </ion-label>
+          <ion-input type="text" formControlName="name"></ion-input>
+          <ng-container *ngIf="isSubmit && form.get('name').errors">
+            <small class="error-message" *ngIf="form.get('name').errors.required" >
+              {{ 'Forms.Inputs.Validation.EnterName' | translate }}
+            </small>
+            <small class="error-message" *ngIf="form.get('name').errors.pattern" >
+              {{ 'Forms.Inputs.Validation.EnterValidName' | translate }}
+            </small>
+          </ng-container>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> {{ 'Forms.Inputs.Placeholder.EmailAddress' | translate }} </ion-label>
+        <ion-input #email type="email" formControlName="email"></ion-input>
+        <ng-container *ngIf="isSubmit && form.get('email').errors">
+          <small class="error-message" *ngIf="form.get('email').errors.required" >
+            {{ 'Forms.Inputs.Validation.EnterEmail' | translate }}
+          </small>
+          <small class="error-message" *ngIf="form.get('email').errors.pattern" >
+            {{ 'Forms.Inputs.Validation.EnterValidEmail' | translate }}
+          </small>
+        </ng-container>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating"> {{ 'Forms.Inputs.Placeholder.MobileNumber' | translate }} </ion-label>
+          <ion-input type="" formControlName="phone"></ion-input>
+          <ng-container *ngIf="isSubmit && form.get('phone').errors">
+            <small class="error-message" *ngIf="form.get('phone').errors.required" >
+              {{ 'Forms.Inputs.Validation.EnterPhone' | translate }}
+            </small>
+            <small class="error-message" *ngIf="form.get('phone').errors.pattern" >
+              {{ 'Forms.Inputs.Validation.EnterValidPhoneNumber' | translate }}
+            </small>
+          </ng-container>
+        </ion-item>
+
+        <div class="checkbox">
+          <ion-checkbox> </ion-checkbox>
+          <label> {{ 'Context.ConfirmThatYouAgree' | translate }} <a> {{ 'Context.TermsAndConditions' | translate }} </a></label>
+        </div>
+      </ion-list>
+      
+      <ion-button type="submit" class="main-button">{{ 'Buttons.CreateAnAccount' | translate }}</ion-button>
+    </form>
+  
+    <div class="footer">
+      <p> {{ 'Context.AlreadyMember' | translate }} <a routerLink="/user/login"> {{ 'Context.SignIn' | translate }} </a></p>
+    </div>
+  </section>
+  
+  </ion-content>
+  

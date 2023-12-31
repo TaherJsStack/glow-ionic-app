@@ -1,0 +1,36 @@
+<ion-content class="ion-padding">
+  <app-header [headerTitle]="resultType == 'mostRated' ? 'قص الشعر' : 'أفضل العروض'"></app-header>
+ 
+  <section>
+    <ng-container *ngIf="resultType == 'mostRated'; else best_offers">
+      <!-- ======================================> most-rated <========================================== -->
+      <ng-container *ngFor="let item of list">
+        <br> 
+        <app-card 
+            [image]="item.image" 
+            [icon]="item.icon" 
+            [title]="item.title" 
+            [location]="item.location"
+            [isHeart]="true"></app-card>
+      </ng-container>
+    </ng-container>
+
+    <ng-template #best_offers>
+      <!-- ======================================> best-offers <========================================== -->
+      <ng-container *ngFor="let item of OffersLessThan300List">
+        <br> 
+        <app-card 
+          [image]="item.image" 
+          [icon]="item.icon" 
+          [title]="item.title" 
+          [location]="item.location" 
+          [offer]="item.offer"
+          [price]="item.price"
+          [isHeart]="false"></app-card>
+      </ng-container>
+    </ng-template>
+
+  </section>
+
+</ion-content>
+

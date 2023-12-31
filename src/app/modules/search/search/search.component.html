@@ -1,0 +1,56 @@
+<ion-content class="ion-padding">
+
+  <app-header headerTitle="{{ 'Headers.Titles.Search' | translate }}"></app-header>
+  
+  <ion-searchbar placeholder="searchbar" value="صالون"></ion-searchbar>
+
+  <section>
+    <h3 class="section-title"> {{ 'Context.Last' | translate }}</h3>
+
+    <ion-list>
+
+      <ion-item lines="none" detail="false" routerLink="/search/SearchResult/salon">
+        <ion-label>صالون </ion-label>
+        <ion-button slot="end" fill="clear"> 
+          <img src="assets/icons/arrow-small-left_outline.svg" alt="" srcset="">  
+        </ion-button>
+      </ion-item>
+
+      <ion-item lines="none" detail="false" routerLink="/search/SearchResult/freelancer">
+        <ion-label>مصفف شعر </ion-label>
+        <ion-button slot="end" fill="clear"> 
+          <img src="assets/icons/arrow-small-left_outline.svg" alt="" srcset="">  
+        </ion-button>
+      </ion-item>
+
+      <ion-item lines="none" detail="false" routerLink="/search/SearchResult/salon">
+        <ion-label>صالون سالوتين هير </ion-label>
+        <ion-button slot="end" fill="clear"> 
+          <img src="assets/icons/arrow-small-left_outline.svg" alt="" srcset="">  
+        </ion-button>
+      </ion-item>
+
+      <ion-item lines="none" detail="false" routerLink="/search/SearchResult/salon">
+        <ion-label>صالون راندا مسعود </ion-label>
+        <ion-button slot="end" fill="clear"> 
+          <img src="assets/icons/arrow-small-left_outline.svg" alt="" srcset="">  
+        </ion-button>
+      </ion-item>
+
+      <ion-item lines="none" detail="false" routerLink="/search/SearchResult/salon" *ngFor="let item of items; let i = index">
+        <ion-label> ({{ i }}) صالون حلا </ion-label>
+        <ion-button slot="end" fill="clear"> 
+          <img src="assets/icons/arrow-small-left_outline.svg" alt="" srcset="">  
+        </ion-button>
+      </ion-item>
+
+    </ion-list>
+
+  </section>
+
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+

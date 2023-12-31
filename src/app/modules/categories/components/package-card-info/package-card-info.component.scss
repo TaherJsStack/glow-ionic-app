@@ -1,0 +1,66 @@
+@import '../../../../../assets/scss/global';
+
+ion-list{
+    background: transparent;
+    ion-item {
+        --background: #F5F4F1;
+        --inner-padding-end: 0px;
+        --padding-start: 15px;
+        --padding-end: 5px;
+        --background: #ffffff;
+        border: 2px solid #F3F4F6;
+        margin: 0;
+        margin-top: 0.4rem;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        .icon{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eeecec;
+            border-radius: 25%;
+            -webkit-border-radius: 25%;
+            -moz-border-radius: 25%;
+            -ms-border-radius: 25%;
+            -o-border-radius: 25%;
+            img{}
+        }
+        ion-label{
+            padding: 0 10px;
+            ion-text{
+                @extend %ion-text
+             }
+            ion-note{
+                font-size: 12px;
+                color: #78716C;
+                display: block;
+            }
+        }
+    }
+
+}
+.packages{
+    ion-avatar{
+        width: 80px;
+        height: 80px;
+        border-radius: 0;
+        img{
+            border-radius: 8px;
+        }
+    }
+    ion-label{
+        ion-note{
+            margin-bottom: 0;
+        }
+        b{
+            color: #8F7A63;
+            font-size: 14px;
+            font-family: SuisseIntl-Medium;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+<div class="slider-container" *ngIf="dataList.length">
+<!-- <ng-container *ngIf="path && pageDir"> -->
+  <ng-container *ngIf="title">
+    <ion-item
+      lines="none"
+      [detail]="false"
+      button
+      (click)="navigate()"
+      *ngIf="showTitle">
+      <ion-label> <b>{{ title }}</b>  </ion-label>
+      <span *ngIf="showMore">
+        {{ 'Buttons.ShowMore' | translate }}
+      </span>
+    </ion-item>
+  </ng-container>
+
+  <!-- =================================================== -->
+  <!-- ================> swiper slider <================== -->
+  <!-- =================================================== -->
+  <!-- product-slide -->
+  <ion-slides  [pager]="type === 'images'" [options]="slideOpts" #Slides>
+    <ion-slide *ngFor="let item of dataList; let i = index">
+      
+      <!-- ======================================> most-rated <========================================== -->
+      <ng-container *ngIf="type === 'labels'">
+        <section class="labels">
+          <div class="title">
+            <b>{{ item.title }}</b>
+          </div>
+          <div class="icon-container">
+            <img [src]="item.icon" alt="" srcset="">
+          </div>
+        </section>        
+      </ng-container>
+
+      <!-- ======================================> specialist <========================================== -->
+      <ng-container *ngIf="type === 'specialist'">
+        <section class="specialist">
+        <input type="checkbox" id="A{{ i }}">
+        <label for="A{{ i }}">
+            <img [src]="item.image" alt="" srcset="">
+            <div class="title">
+              <b>{{ item.name }}</b>
+            </div>
+            <span>{{ item.job }}</span>
+          </label>
+        </section>        
+      </ng-container>
+
+      <!-- ======================================> most-rated <========================================== -->
+      <ng-container *ngIf="type === 'most-rated'">
+        <app-card 
+          [image]="item.image" 
+          [icon]="item.icon" 
+          [title]="item.title" 
+          [location]="item.location"
+          [cardPathTo]="cardPathTo"
+          [queryParams]="queryParams"
+          [isHeart]="true"></app-card>
+      </ng-container>
+
+      <!-- ======================================> best-offers <========================================== -->
+      <ng-container *ngIf="type === 'best-offers'">
+        <app-card 
+          [image]="item.image" 
+          [icon]="item.icon" 
+          [title]="item.title" 
+          [location]="item.location" 
+          [offer]="item.offer"
+          [price]="item.price"
+          [cardPathTo]="cardPathTo"
+          [queryParams]="queryParams"
+          [isHeart]="false"></app-card>
+      </ng-container>
+      
+      <!-- ======================================> offers-less-than-300 <========================================== -->
+      <ng-container *ngIf="type === 'offers-less-than-300'">
+        <app-card 
+        [image]="item.image" 
+        [icon]="item.icon" 
+        [title]="item.title" 
+        [location]="item.location" 
+        [offer]="item.offer"
+        [price]="item.price"
+        [cardPathTo]="cardPathTo"
+        [queryParams]="queryParams"
+        [isHeart]="false"></app-card>
+      </ng-container>
+      
+    </ion-slide>
+
+    <!-- ======================================> slider skeleton <==================================== -->
+
+    <ng-container *ngIf="type === 'images' && dataList.length === 0">
+      <ion-slide>
+        <ion-skeleton-text
+          class="images-skeleton"
+          animated
+          style="width: 95%; height: 125px; margin: auto; border-radius: 8px"
+        ></ion-skeleton-text>
+      </ion-slide>
+    </ng-container>
+
+  </ion-slides>

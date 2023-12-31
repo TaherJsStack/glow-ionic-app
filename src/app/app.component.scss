@@ -1,0 +1,36 @@
+.active-page{
+    background-color: green;
+    color: var(--ion-color-primary);
+    color: green;
+    ion-icon{
+      color: var(--ion-color-primary);
+    }
+  }
+
+  .showNetworkState{
+    position: absolute;
+    top: 39px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: ease-in-out .5s;
+  }
+
+  .hideNetworkState{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: ease-in-out .5s;
+  }
+
+  .showNetworkMessage{
+    visibility: visible;
+  }
+
+  .hideNetworkMessage{
+    visibility: hidden;
+  }
+
+  

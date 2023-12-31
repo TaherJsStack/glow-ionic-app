@@ -1,0 +1,62 @@
+<ion-content class="ion-padding">
+  <app-header headerTitle="{{ 'Headers.Titles.ResearchResults' | translate }}"></app-header>
+ 
+  <ion-searchbar placeholder="searchbar" value="صالون"></ion-searchbar>
+  
+  <ng-container *ngIf="noResult; else notification_content">
+
+    <ng-container *ngIf="resultType == 'salon'">
+      <section>
+        <h3 class="section-title">{{ 'Context.SearchResults' | translate }}“<label>صالون</label>”</h3>
+        <ng-container *ngFor="let item of list">
+          <br>  
+          <app-card 
+              [image]="item.image" 
+              [icon]="item.icon" 
+              [title]="item.title" 
+              [location]="item.location"
+              cardPathTo="/categories/package/offers/88"
+              [isHeart]="true"></app-card>
+        </ng-container>
+      </section>
+    </ng-container>
+
+    <ng-container *ngIf="resultType == 'freelancer'">
+      <section>
+        <h3 class="section-title">{{ 'Context.SearchResults' | translate }} “<label> مصفف شعر</label>”</h3>
+    
+        <ng-container *ngFor="let item of list">
+          <ion-item lines="none">
+            <div class="avatar">
+              <img src="assets/icons/avatar.svg" alt="" srcset="">
+            </div>
+            <ion-label>
+              <ion-text>راندا مسعود</ion-text><br />
+              <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
+                مصفف شعر
+              </ion-note>
+            </ion-label>
+        
+            <ion-buttons slot="end">
+              <ion-button shape="round" slot="end">
+                <b>5.0</b>
+                <img alt="" src="assets/icons/star.svg" />
+              </ion-button>
+            </ion-buttons>
+            
+          </ion-item>
+        </ng-container>
+          
+      </section>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #notification_content>
+    <app-empty-content 
+      title="{{ 'Context.MatchingSearchResults' | translate }}" 
+      text="{{ 'Context.SearchAgainOrUseFiltering' | translate }} " 
+      icon="assets/icons/noResult.svg"></app-empty-content>
+  </ng-template>
+
+</ion-content>
+

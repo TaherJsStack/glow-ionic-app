@@ -1,0 +1,68 @@
+ion-content{
+    section{
+
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        form{
+            margin-top: 2rem;
+            ion-list{
+                background: transparent;
+                .radio-list{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 5px;
+                    .radio-custom{
+                        &:has(input[type='radio']:checked){
+                            label{
+                                background-image: url(../../../../assets/icons/active-star.svg);
+                            }
+                        }
+                        input[type='radio'] { 
+                            display: none;
+                        }
+                        label{
+                            background-image: url(../../../../assets/icons/unactive-star.svg);
+                            background-repeat: no-repeat;
+                            width: 50px;
+                            display: inline-block;
+                            height: 50px;
+                        }
+                    }
+                }
+                p{
+                    margin-top: 2rem;
+                }
+                ion-textarea {
+                    --background: #ffffff;
+                    --padding-start: 20px ;
+                    border-radius: 8px;
+                    -webkit-border-radius: 8px;
+                    -moz-border-radius: 8px;
+                    -ms-border-radius: 8px;
+                    -o-border-radius: 8px;
+                }
+            }
+        }
+        .footer{
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            ion-button{
+                width: 50%;
+                height: 56px;
+                --background: #F5F4F1;
+                color: #78716C;
+                &.active{
+                    color: #ffffff;
+                    --background: #8F7A63;
+                    &.fulle-width{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+      
+}
