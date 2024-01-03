@@ -14,7 +14,7 @@
         {{ item.description }}
       </ion-note>
 
-      <b *ngIf="item.price">{{ item.price }} ر.س</b>
+      <b *ngIf="item.price">{{ item.price }} {{ 'Context.SAR' | translate }}</b>
       <ion-button shape="round" fill="clear" *ngIf="item.rate">
         <b>{{ item.rate }}</b>
         <img alt="" src="assets/icons/star.svg" />

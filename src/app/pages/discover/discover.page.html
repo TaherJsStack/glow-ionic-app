@@ -8,7 +8,7 @@
         <img alt="" src="assets/icons/user.svg" />
       </ion-thumbnail>
       <ion-label>
-        <p>أهلا! 👋</p>
+        <p> {{ 'Context.Hello' | translate }} ! 👋</p>
         <h1 class="title">نورا عبدالله</h1>
       </ion-label>
       <ion-buttons slot="end">
@@ -86,8 +86,24 @@
   <app-slider-container
     id="homeStep4"
     type="offers-less-than-300"
-    title=" ر.س {{ 'Context.OffersLessThan-300' | translate }}"
+    title="{{ 'Context.OffersLessThan-300' | translate }} {{ 'Context.SAR' | translate }} "
     path="/categories/categories/offers"
+    cardPathTo="/categories/salon/type"
+    packagePathTo='/categories/booking/111'
+    [dataList]="OffersLessThan300List"
+    [isItemDetail]="true"
+    [slidesPerView]="1.4"
+    [slidesSpaceBetween]="7"
+  ></app-slider-container>
+  <!-- ------------------------ -->
+
+      <!-- More Bookings  -->
+  <!-- ------------------------ -->
+  <app-slider-container
+    id="homeStep4"
+    type="offers-less-than-300"
+    title=" {{ 'Context.MoreBookings' | translate }} {{ 'Context.SAR' | translate }}"
+    path="/categories/categories/MoreBookings"
     cardPathTo="/categories/salon/type"
     packagePathTo='/categories/booking/111'
     [dataList]="OffersLessThan300List"

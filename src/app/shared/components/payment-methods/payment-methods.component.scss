@@ -9,7 +9,6 @@
                 --padding-start: 15px;
                 --padding-end: 0px;
                 margin-top: 0.4rem;
-                
                 height: 72px;
                 background: white;
                 --background: #ffffff;
@@ -20,6 +19,13 @@
                 -moz-border-radius: 12px;
                 -ms-border-radius: 12px;
                 -o-border-radius: 12px;
+
+                &:has([aria-checked=true]){
+                    // background: red;
+                    // --background: red;
+                    border-color: #9E8B71;
+                }
+
                 ion-avatar{
                     img{
                         object-fit: contain;

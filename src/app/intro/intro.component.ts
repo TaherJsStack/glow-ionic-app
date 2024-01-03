@@ -10,22 +10,21 @@ import { Router } from '@angular/router';
 export class IntroComponent implements OnInit {
 
   @ViewChild('slides', { static: true }) slides: IonSlides;
-  nextSlideUrl: string;
+
+  slidList: {slidImagepath: string}[]= [
+    {slidImagepath: 'assets/intro/slid1.svg'},
+    {slidImagepath: 'assets/intro/slid2.svg'},
+    {slidImagepath: 'assets/intro/slid3.svg'}
+  ]
+  indexCount = 0;
+
 
   constructor(
     private router: Router
   ) { }
 
-  ngOnInit() {}
-  onSlideNextStart(event: any) {
-    console.log('event.target.swiper -->', event.target.swiper)
-    const nextSlideIndex = event.target.swiper.activeIndex + 1;
-    const slides = event.target.slides;
-    const nextSlide = slides[nextSlideIndex];
-    const imgElement = nextSlide.querySelector('img');
+  ngOnInit() { }
 
-    this.nextSlideUrl = imgElement.src;
-  }
     /**
      * @param event
      * get slide index number
@@ -33,8 +32,19 @@ export class IntroComponent implements OnInit {
      */
     ionSlideTouchEnd(event){
       event.target.getActiveIndex().then(index => {
-        // this.activeIndex = 1+index;
+        if ((index+1) == this.slidList.length ) {
+          this.indexCount++
+          if (this.indexCount > 1) {
+            this.goToHome()
+          }
+        } else {
+          this.indexCount = 0
+        }
       });
+    }
+
+    goToHome(){
+      this.router.navigate(['/home'])
     }
 
     /**
@@ -53,10 +63,10 @@ export class IntroComponent implements OnInit {
      */
     onSlideChangeStart(event) {
       event.target.isEnd().then(isEnd => {
+        console.log('isEnd -->', isEnd)
         // this.showSkip = !isEnd;
-        if (isEnd) {
-          this.router.navigate(['/home'])
-        }
+        // if (isEnd) {
+        // }
       });
     }
 

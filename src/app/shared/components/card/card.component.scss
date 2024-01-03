@@ -131,6 +131,13 @@ ion-card{
     -o-border-radius: 8px;
     ion-buttons{ 
       ion-button {
+        --padding-top: 0;
+        --padding-bottom: 0;
+        --padding-start: 0;
+        --padding-end: 0;
+        img{
+          width: 100%;
+        }
       }
     }
   }

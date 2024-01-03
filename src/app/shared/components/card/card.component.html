@@ -5,7 +5,7 @@
         <app-favorite-btn ></app-favorite-btn>
       </ng-container>
       <ng-template #gift>
-          <ion-button fill="clear" slots="icon-only">
+        <ion-button fill="clear" slots="icon-only" (click)="showFromModal()">
           <img src="assets/icons/gift.svg" alt="" srcset="">
         </ion-button>
       </ng-template>
@@ -37,8 +37,8 @@
         </ion-buttons>
 
         <div *ngIf="offer" class="price">
-          <s>{{ offer }} ر.س </s>
-          <b>{{ price }} ر.س </b>
+          <s>{{ offer }} {{ 'Context.SAR' | translate }} </s>
+          <b>{{ price }} {{ 'Context.SAR' | translate }} </b>
         </div>
 
       </ion-item>

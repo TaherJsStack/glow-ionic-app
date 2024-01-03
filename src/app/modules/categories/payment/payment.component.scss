@@ -40,6 +40,8 @@ ion-list{
         --padding-start: 10px;
         height: 72px;
         display: flex;
+        justify-content: space-between;
+        --inner-padding-end: 0;
         border-radius: 12px;
         -webkit-border-radius: 12px;
         -moz-border-radius: 12px;

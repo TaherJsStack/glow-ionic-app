@@ -59,7 +59,8 @@
         "Reason": "Reason",
         "Country": "Country",
         "Address":"Address",
-        "SearchInSalon":"Search In Salon"
+        "SearchInSalon":"Search In Salon",
+        "EnterTheDiscountCode":"Enter the discount code"
 
       },
       "Validation": {
@@ -219,8 +220,9 @@
     "ConfirmThatYouAgree":"Confirm that you agree to this",
     "SignIn":"Sign In",
     "AlreadyMember":"Already a member?",
-
-    "":""
+    "MoreBookings":"More Bookings",
+    "SAR":"SAR",
+    "Hello":"Hello"
 
   },
 
@@ -245,6 +247,7 @@
     "SendMoney":"Send Money",
     "AddRecipientDetails":"Add recipient details",
     "AddCardDetails":"Add your card details here",
+    "SendAGift":"Send as a gift",
     "":""
  
   }

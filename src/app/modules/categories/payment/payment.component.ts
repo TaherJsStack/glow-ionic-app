@@ -80,14 +80,14 @@ export class PaymentComponent implements OnInit {
     console.log('selectesCard', event)
   }
 
-  async showFromModal(formType, title, description, actionBtnText, confirmOnlyBtnText): Promise<boolean> {
+  async showFromModal(): Promise<boolean> {
     const modal = await this.formModalService.onOpenFormModal({
-      formType,
+      formType: ModalFormType.Gift,
       icon: '',
-      title,
-      description,
-      actionBtnText, 
-      confirmOnlyBtnText,
+      title: this.translateService.instant('Modal.SendAGift'),
+      description: this.translateService.instant('Modal.AddRecipientDetails'),
+      actionBtnText: this.translateService.instant('Buttons.Save'), 
+      confirmOnlyBtnText: '',
       actionBtn: true,
     });
     const { data } = await modal.onWillDismiss();

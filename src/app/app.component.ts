@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private translate: TranslateService,
     @Inject(DOCUMENT) private document: Document,
-
   ) { }
 
   async ngOnInit() {
@@ -26,7 +25,11 @@ export class AppComponent implements OnInit {
   }
 
   initializeApp() {
+    
     this.setDeviceLang()
+    this.platform.backButton.subscribeWithPriority(0, () => {
+      navigator['app'].exitApp();
+   });
   }
 
   /**

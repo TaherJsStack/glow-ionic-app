@@ -42,9 +42,14 @@ ion-content{
                         border-left: 1px solid #E7E5E4;
                         margin-left: 1rem;
                     }
-                    // ion-input{
-                    //     height: 56px;
-                    // }
+                    ion-input{
+                        // background-color: #7F6957 !important;
+                        // --background: #7F6957 !important;
+                        padding: 0 10px !important;
+                        ::ng-deep {
+
+                        }
+                    }
                 }
                 .forgit-password{
                     p{

@@ -17,7 +17,7 @@
     </div>
     <ion-list class="discount-code">
       <ion-item lines="none" detail="false">
-        <ion-input label="Floating Input" label-placement="floating" placeholder="ادخل كود الخصم"></ion-input>
+        <ion-input label="Floating Input" label-placement="floating" placeholder="{{ 'Forms.Inputs.Placeholder.EnterTheDiscountCode' | translate }}"></ion-input>
         <ion-label>
         </ion-label>
         <ion-buttons>
@@ -31,7 +31,7 @@
 
   <section class="send-gift">
 
-    <ion-item lines="none" detail="false" button (click)="showFromModal(modalFormType.Gift,'إرسال كهدية','أضف تفاصيل المستلم', 'حفظ', '')">
+    <ion-item lines="none" detail="false" button (click)="showFromModal()">
       <ion-avatar>
         <img src="assets/icons/gift-white.svg" alt="" srcset="">
       </ion-avatar>
@@ -64,7 +64,7 @@
         <b>
           1480.00 
         </b>
-        <p>ر.س</p>
+        <p>{{ 'Context.SAR' | translate }}</p>
       </div>
     </ion-col>
   </ion-row>

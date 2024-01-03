@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalFormType } from '../../enums/modal-form-types.enum';
+import { FormModalService } from '../../services/form-modal.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-card',
@@ -22,7 +25,9 @@ export class CardComponent implements OnInit {
 @Input() queryParams: { [key: string]: any };
 
   constructor(
-    private router: Router
+    private router: Router,
+    private formModalService: FormModalService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit() {
@@ -37,4 +42,21 @@ export class CardComponent implements OnInit {
      });
    }
 
+   async showFromModal(): Promise<boolean> {
+    event.stopPropagation();
+
+    const modal = await this.formModalService.onOpenFormModal({
+      formType: ModalFormType.Gift,
+      icon: '',
+      title: this.translateService.instant('Modal.SendAGift'),
+      description: this.translateService.instant('Modal.AddRecipientDetails'),
+      actionBtnText: this.translateService.instant('Buttons.Save'), 
+      confirmOnlyBtnText: '',
+      actionBtn: true,
+      cssClass: 'backdropDismissModal'
+    });
+    const { data } = await modal.onWillDismiss();
+    console.log('data -->', data)
+    return data;
+  }
 }

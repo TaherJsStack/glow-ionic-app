@@ -60,7 +60,8 @@
         "Reason": "السبب*",
         "Country": "الدولة",
         "Address":"العنوان",
-        "SearchInSalon":"ابحث عن صالون"
+        "SearchInSalon":"ابحث عن صالون",
+        "EnterTheDiscountCode":"ادخل كود الخصم"
 
       },
       "Validation": {
@@ -220,7 +221,9 @@
     "ConfirmThatYouAgree":"قم بالتأكيد انك توافق على",
     "SignIn":"تسجيل الدخول",
     "AlreadyMember":"عضوا فعلا؟",
-    "":""
+    "MoreBookings":"اكثر الحجوزات",
+    "SAR":"ر.س",
+    "Hello":"أهلا"
 
   },
   
@@ -245,7 +248,7 @@
     "SendMoney":"إرسال نقود",
     "AddRecipientDetails":"أضف تفاصيل المستلم",
     "AddCardDetails":"أضف تفاصيل بطاقتك هنا",
-    "":""
+    "SendAGift":"إرسال كهدية"
     
   }
 

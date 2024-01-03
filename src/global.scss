@@ -50,6 +50,26 @@
   src: url(./assets/fonts/Ubuntu-Light.ttf);
 }
 
+.safe--area {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 20px;
+}
+
+ion-footer{
+  background-color: #fafaf9 !important;
+  &::before{
+    background: unset;
+  }
+}
+
+.footer-md{
+  &::before{
+    background: unset;
+  }
+}
+
 ion-checkbox{
   --background-checked: #8F7A63;
   --border-color-checked: #8F7A63;
@@ -58,6 +78,9 @@ ion-checkbox{
 .intro-swiper-slide{
   .swiper-pagination {
     bottom: -14px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .swiper-pagination-bullet{
       background-color: #7F6957;
       width: 20px;

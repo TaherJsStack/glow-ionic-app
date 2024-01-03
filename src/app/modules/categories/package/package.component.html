@@ -18,9 +18,9 @@
             </ion-text>
           </ion-col>
           <ion-col size="4" class="ion-align-self-end ion-text-end">
-            <s>2000 ر.س</s>
+            <s>2000 {{ 'Context.SAR' | translate }}</s>
             <br>
-            <b>1500 ر.س</b>
+            <b>1500 {{ 'Context.SAR' | translate }}</b>
           </ion-col>
           <ion-text class="ion-margin-top">
             “هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي” 
@@ -74,7 +74,7 @@
             <ion-note color="medium" class="ion-text-wrap ion-margin-bottom">
               {{ item.description }}
             </ion-note>
-            <b>{{ item.price }} ر.س</b>
+            <b>{{ item.price }} {{ 'Context.SAR' | translate }}</b>
           </ion-label>
           <ion-buttons>
             <ion-button>

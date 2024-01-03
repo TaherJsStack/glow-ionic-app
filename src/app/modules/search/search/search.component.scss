@@ -28,11 +28,10 @@ ion-searchbar {
           font-family: var(--en-font-regular);
           text-align: right;
           box-shadow: none;
-          padding: 0 45px;;
+          padding: 0 45px;
           height: 100%;
         }
-        ion-icon {
-        }
+        ion-icon { }
       }
     }
   }
@@ -61,4 +60,19 @@ ion-list{
         }
 
     }
+}
+
+
+:host-context(body[dir="ltr"]) {
+  ion-item{
+    ion-button{
+      img{
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+      }
+    }
+  }
 }

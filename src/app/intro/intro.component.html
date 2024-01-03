@@ -14,21 +14,9 @@
     pager="true" 
     class="swiper-slide intro-swiper-slide" >
 
-      <ion-slide>
+      <ion-slide *ngFor="let item of slidList">
         <div class="slid-container">
-          <img src="assets/intro/slid1.svg" alt="" srcset="">
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <div class="slid-container">
-          <img src="assets/intro/slid2.svg" alt="" srcset="">
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <div class="slid-container">
-          <img src="assets/intro/slid3.svg" alt="" srcset="">
+          <img src="{{ item.slidImagepath }}" alt="" srcset="">
         </div>
       </ion-slide>
 
