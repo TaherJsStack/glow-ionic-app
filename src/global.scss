@@ -57,6 +57,15 @@
   --ion-safe-area-bottom: 20px;
 }
 
+ion-header {
+  --ion-safe-area-top: env(safe-area-inset-top);
+}
+
+ion-content {
+  --ion-safe-area-top: env(safe-area-inset-top);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+}
+
 ion-footer{
   background-color: #fafaf9 !important;
   &::before{
