@@ -51,19 +51,38 @@
 }
 
 .safe--area {
-  padding-top: constant(safe-area-inset-top);
-  padding-top: env(safe-area-inset-top);
-  --ion-safe-area-top: 20px;
-  --ion-safe-area-bottom: 20px;
+  padding-top: constant(safe-area-inset-top) !important;
+  padding-top: env(safe-area-inset-top) !important;
+  --ion-safe-area-top: 20px !important;
+  --ion-safe-area-bottom: 20px !important;
 }
 
 ion-header {
-  --ion-safe-area-top: env(safe-area-inset-top);
+  --ion-safe-area-top: env(safe-area-inset-top) !important;
 }
 
 ion-content {
-  --ion-safe-area-top: env(safe-area-inset-top);
-  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+  --ion-safe-area-top: env(safe-area-inset-top) !important;
+  --ion-safe-area-bottom: env(safe-area-inset-bottom) !important;
+}
+
+@supports (-webkit-touch-callout: none) {
+  ion-header {
+    --ion-safe-area-top: env(safe-area-inset-top) !important;
+  }
+
+  ion-content {
+    --ion-safe-area-top: env(safe-area-inset-top) !important;
+    --ion-safe-area-bottom: env(safe-area-inset-bottom) !important;
+  }
+}
+
+// check again with multi devices (IOS)
+html.ios {
+  margin-top: calc( 20px + env(safe-area-inset-top)) !important;
+  &::part(content) {
+      margin-top: calc( 20px + env(safe-area-inset-top)) !important;
+  }
 }
 
 ion-footer{
