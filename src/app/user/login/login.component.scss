@@ -1,13 +1,20 @@
 ion-content{
     section{
         display: flex;
-        //height: 95vh;
         height: calc(100vh - env(safe-area-inset-top));
         flex-direction: column;
         padding: 1.5rem;
         .logo-container{
-            //margin-top: env(safe-area-inset-top) !important;
+            display: flex;
+            justify-content: space-between;
             img{}
+            ion-buttons{
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+}
         }
         .title{
             h3{
