@@ -9,17 +9,16 @@
   <!-- ion-slides -->
   <ion-slides 
     #slides 
-    (ionSlideWillChange)="onSlideChangeStart($event)" 
     (ionSlideTouchEnd)="ionSlideTouchEnd($event)" 
     pager="true" 
-    class="swiper-slide intro-swiper-slide" >
-
+    class="swiper-slide intro-swiper-slide"
+    [options]="slideOpts"
+    >
       <ion-slide *ngFor="let item of slidList">
         <div class="slid-container">
           <img src="{{ item.slidImagepath }}" alt="" srcset="">
         </div>
       </ion-slide>
-
   </ion-slides>
   <!-- end ion-slides -->
   

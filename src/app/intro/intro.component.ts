@@ -18,7 +18,17 @@ export class IntroComponent implements OnInit {
   ]
   indexCount = 0;
 
-
+  slideOpts = {
+    // initialSlide: 0,
+    // slidesPerView: 1.2,
+    // spaceBetween: 20,
+    // slidesPerView: 'auto',
+    // centeredSlides: true,
+    // speed: 400,
+    // loop: false,
+    // dir: '',
+    // autoplay: 1000,
+  };
   constructor(
     private router: Router
   ) { }
@@ -43,44 +53,23 @@ export class IntroComponent implements OnInit {
       });
     }
 
+    /**
+     * got to next slide
+     */
+    isEndSlide:boolean = false;
+    next() {
+      if (this.isEndSlide) {
+        this.goToHome()
+      }
+      this.slides.slideNext().then(index => {
+        this.slides.isEnd().then(isEnd => {
+            this.isEndSlide = isEnd
+       })
+      });
+    }
+
     goToHome(){
       this.router.navigate(['/home'])
     }
 
-    /**
-     * @param index
-     * opening slide o user click into stage
-     */
-    slideTo(index) {
-      this.slides.slideTo(index-1);
-      // this.activeIndex = index;
-    }
-
-    /**
-     * @param event
-     * hide skip button when last slider
-     * change showSkip value
-     */
-    onSlideChangeStart(event) {
-      event.target.isEnd().then(isEnd => {
-        console.log('isEnd -->', isEnd)
-        // this.showSkip = !isEnd;
-        // if (isEnd) {
-        // }
-      });
-    }
-
-    /**
-     * got to next slide
-     */
-    next() {
-      this.slides.slideNext();
-    }
-
-    /**
-     * back to previous
-     */
-    prev() {
-      this.slides.slidePrev();
-    }
 }
