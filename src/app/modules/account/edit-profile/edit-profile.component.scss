@@ -1,7 +1,7 @@
 ion-content{
     section{
         display: flex;
-        height: 95vh;
+        height: calc(95vh - env(safe-area-inset-top));
         flex-direction: column;
         padding: 1.5rem;
         .logo-container{

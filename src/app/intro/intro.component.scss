@@ -2,6 +2,7 @@ ion-content{
 display: flex;
 flex-direction: column;
     .logo-container{
+        margin-top: env(safe-area-inset-top);
         padding: 1rem;
         img{
             margin: auto;
@@ -10,8 +11,8 @@ flex-direction: column;
     }
     ion-slides{
         padding: 0;
-        height: 61vh;
-        height: 70%;
+        //height: 55vh;
+        height: 60%;
         overflow: visible;
         .slid-container{
             img{

@@ -1,10 +1,12 @@
 ion-content{
     section{
         display: flex;
-        height: 100vh;
+        height: calc(100vh - env(safe-area-inset-top));
         flex-direction: column;
         padding: 1.5rem;
         .logo-container{
+            //margin-top: env(safe-area-inset-top) !important;
+
             img{}
         }
         .title{
