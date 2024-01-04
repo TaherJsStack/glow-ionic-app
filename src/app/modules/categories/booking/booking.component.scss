@@ -144,6 +144,14 @@ ion-list{
                 font-family: SuisseIntl-Regular;
             }   
         }
+
+        ion-buttons{
+            ion-button{
+                ion-toggle{
+                    --background-checked: #8f7a6390;
+                }
+            }
+        }
     }
 }
 
