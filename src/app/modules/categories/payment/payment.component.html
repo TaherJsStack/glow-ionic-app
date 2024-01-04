@@ -50,10 +50,7 @@
 
   <app-list-info [listInfo]="listInfo" ></app-list-info>
 
-</ion-content>
-
-<ion-footer>
-  <ion-row>
+  <ion-row class="ion-footer">
     <ion-col size="8">
       <div class="footer">
         <ion-button type="button" class="login main-button" (click)="onPay()"> {{ 'Buttons.Pay' | translate }}</ion-button>
@@ -68,4 +65,5 @@
       </div>
     </ion-col>
   </ion-row>
-</ion-footer>
+  
+</ion-content>
