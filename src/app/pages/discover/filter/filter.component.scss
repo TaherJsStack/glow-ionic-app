@@ -11,11 +11,23 @@ ion-content{
                 --inner-padding-start: 0px;
                 --padding-start: 0px;
                 ion-label{
-                font-size: 12px;
+                font-size: 16px;
                 color: #44403C;
                 font-family: SuisseIntl-Medium;
                 }
             }
+        }
+        .range-values{
+            display: flex;
+            justify-content: space-between;
+            font-family: SuisseIntl-Medium;
+            font-size: 12px;
+            color: #44403C;
+            padding-inline-start: 8px;
+            padding-inline-end: 8px;
+        }
+        ion-range{
+            padding-top: 0;
         }
         .checkbox-list{
             display: flex;

@@ -4,19 +4,36 @@
   
     <app-section sectionTitle="{{ 'Context.City' | translate }}">
       <ng-container appContentSlot1>
-        <ion-list>
+        <ion-select 
+          multiple="true" 
+          mode="ios"  
+          aria-label="reasons" 
+          interface="" 
+          okText="{{ 'Buttons.Ok' | translate }}"
+          cancelText="{{ 'Buttons.Cancel' | translate }}"
+          placeholder="{{ 'Context.SelectCity' | translate }}">
+          <ion-select-option value="">{{ 'Context.SelectCity' | translate }}</ion-select-option>
+          <ion-select-option value="1">{{ 'Context.SelectCity' | translate }} 1 </ion-select-option>
+          <ion-select-option value="2">{{ 'Context.SelectCity' | translate }} 2 </ion-select-option>
+          <ion-select-option value="3">{{ 'Context.SelectCity' | translate }} 3 </ion-select-option>
+        </ion-select>
+        <!-- <ion-list>
           <ion-item lines="none" detail="false">
             <ion-label>{{ 'Context.SelectCity' | translate }}</ion-label>
             <ion-button slot="end" fill="clear"> 
               <img src="assets/icons/arrow-small-left_outline.svg" alt="" srcset="">  
             </ion-button>
           </ion-item>
-        </ion-list>
+        </ion-list> -->
       </ng-container>
     </app-section>
   
     <app-section sectionTitle="{{ 'Context.ThePrice' | translate }}">
-      <ng-container appContentSlot1>
+      <ng-container >
+        <ion-row class="range-values">
+          <label>{{ rangeLower }}</label>
+          <label>{{ rangeUpper }}</label>
+        </ion-row>
         <ion-range 
           (ionChange)="onIonChange($event)" 
           aria-label="Dual Knobs Range" 
