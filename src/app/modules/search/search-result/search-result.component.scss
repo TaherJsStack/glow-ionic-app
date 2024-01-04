@@ -25,10 +25,10 @@ ion-searchbar {
         -ms-border-radius: 8px;
         -o-border-radius: 8px;
         .searchbar-input {
-          font-family: var(--en-font-regular);
+          font-family: SuisseIntl-Medium;
           text-align: right;
           box-shadow: none;
-          padding: 0;
+          padding: 0 45px;
           height: 100%;
         }
         ion-icon {
