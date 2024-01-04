@@ -60,6 +60,7 @@ export class PaymentMethodsComponent implements OnInit {
       actionBtnText: this.translateService.instant('Buttons.Save'), 
       confirmOnlyBtnText: '',
       actionBtn: true,
+      cssClass: 'backdropDismissModal'
     });
     const { data } = await modal.onWillDismiss();
     console.log('data -->', data)

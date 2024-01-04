@@ -89,6 +89,7 @@ export class PaymentComponent implements OnInit {
       actionBtnText: this.translateService.instant('Buttons.Save'), 
       confirmOnlyBtnText: '',
       actionBtn: true,
+      cssClass: 'backdropDismissModal'
     });
     const { data } = await modal.onWillDismiss();
     console.log('data -->', data)
@@ -103,6 +104,7 @@ export class PaymentComponent implements OnInit {
       description,
       actionBtnText: this.translateService.instant('Buttons.Home'),
       context: this,
+      cssClass: 'backdropDismissModal'
     });
     const { data } = await modal.onWillDismiss();
 

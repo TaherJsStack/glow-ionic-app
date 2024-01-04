@@ -55,6 +55,7 @@ export class ChangePasswordComponent implements OnInit {
       confirmOnlyBtn: true,
       confirmOnlyBtnText: 'Ok',
       context: this,
+      cssClass: 'backdropDismissModal'
     });
   }
 

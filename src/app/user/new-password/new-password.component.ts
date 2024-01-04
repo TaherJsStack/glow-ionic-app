@@ -57,6 +57,7 @@ export class NewPasswordComponent implements OnInit {
       confirmOnlyBtn: true,
       confirmOnlyBtnText: this.translateService.instant('Buttons.Ok'),
       context: this,
+      cssClass: 'backdropDismissModal'
     });
   }
 
